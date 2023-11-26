@@ -26,24 +26,6 @@ public interface InicioSesion {
 
     /**
      * 
-     * @param password
-     * @param username
-     * @return
-     *     returns servicioiniciosesion.Cliente
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "login", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.Login")
-    @ResponseWrapper(localName = "loginResponse", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.LoginResponse")
-    @Action(input = "http://servicioInicioSesion/InicioSesion/loginRequest", output = "http://servicioInicioSesion/InicioSesion/loginResponse")
-    public Cliente login(
-        @WebParam(name = "username", targetNamespace = "")
-        String username,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
-
-    /**
-     * 
      * @param contraseña1
      * @param cedula
      * @param apellido
@@ -71,5 +53,23 @@ public interface InicioSesion {
         String contraseña,
         @WebParam(name = "contrase\u00f1a1", targetNamespace = "")
         String contraseña1);
+
+    /**
+     * 
+     * @param password
+     * @param username
+     * @return
+     *     returns servicioiniciosesion.Cliente
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "login", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.Login")
+    @ResponseWrapper(localName = "loginResponse", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.LoginResponse")
+    @Action(input = "http://servicioInicioSesion/InicioSesion/loginRequest", output = "http://servicioInicioSesion/InicioSesion/loginResponse")
+    public Cliente login(
+        @WebParam(name = "username", targetNamespace = "")
+        String username,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
 
 }

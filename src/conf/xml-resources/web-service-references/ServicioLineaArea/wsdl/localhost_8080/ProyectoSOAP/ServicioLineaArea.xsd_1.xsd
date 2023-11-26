@@ -82,19 +82,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="BuscarVuelos">
-<xs:sequence>
-<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
-<xs:element name="hora" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="BuscarVuelosResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:horarioVuelo" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="AnularVuelo">
 <xs:sequence>
 <xs:element name="numeroVuelo" type="xs:string" minOccurs="0"/>
@@ -118,6 +105,19 @@
 <xs:complexType name="CambiarVueloResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BuscarVuelos">
+<xs:sequence>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="hora" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BuscarVuelosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:horarioVuelo" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -4,42 +4,6 @@
 <xsd:import namespace="http://servicioTarjetaWS/" schemaLocation="http://localhost:8080/ProyectoSOAP/ServicioTarjetaCredito?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="realizarTransaccion">
-<part name="parameters" element="tns:realizarTransaccion"/>
-</message>
-<message name="realizarTransaccionResponse">
-<part name="parameters" element="tns:realizarTransaccionResponse"/>
-</message>
-<message name="consultarSaldoDisponible">
-<part name="parameters" element="tns:consultarSaldoDisponible"/>
-</message>
-<message name="consultarSaldoDisponibleResponse">
-<part name="parameters" element="tns:consultarSaldoDisponibleResponse"/>
-</message>
-<message name="ActualizarTarjeta">
-<part name="parameters" element="tns:ActualizarTarjeta"/>
-</message>
-<message name="ActualizarTarjetaResponse">
-<part name="parameters" element="tns:ActualizarTarjetaResponse"/>
-</message>
-<message name="validarFechaVencimiento">
-<part name="parameters" element="tns:validarFechaVencimiento"/>
-</message>
-<message name="validarFechaVencimientoResponse">
-<part name="parameters" element="tns:validarFechaVencimientoResponse"/>
-</message>
-<message name="obtenerHistorialTarjeta">
-<part name="parameters" element="tns:obtenerHistorialTarjeta"/>
-</message>
-<message name="obtenerHistorialTarjetaResponse">
-<part name="parameters" element="tns:obtenerHistorialTarjetaResponse"/>
-</message>
-<message name="validarTarjetaCredito">
-<part name="parameters" element="tns:validarTarjetaCredito"/>
-</message>
-<message name="validarTarjetaCreditoResponse">
-<part name="parameters" element="tns:validarTarjetaCreditoResponse"/>
-</message>
 <message name="retirarDinero">
 <part name="parameters" element="tns:retirarDinero"/>
 </message>
@@ -52,31 +16,43 @@
 <message name="RegistroTarjetaResponse">
 <part name="parameters" element="tns:RegistroTarjetaResponse"/>
 </message>
+<message name="realizarTransaccion">
+<part name="parameters" element="tns:realizarTransaccion"/>
+</message>
+<message name="realizarTransaccionResponse">
+<part name="parameters" element="tns:realizarTransaccionResponse"/>
+</message>
+<message name="validarFechaVencimiento">
+<part name="parameters" element="tns:validarFechaVencimiento"/>
+</message>
+<message name="validarFechaVencimientoResponse">
+<part name="parameters" element="tns:validarFechaVencimientoResponse"/>
+</message>
+<message name="ActualizarTarjeta">
+<part name="parameters" element="tns:ActualizarTarjeta"/>
+</message>
+<message name="ActualizarTarjetaResponse">
+<part name="parameters" element="tns:ActualizarTarjetaResponse"/>
+</message>
+<message name="obtenerHistorialTarjeta">
+<part name="parameters" element="tns:obtenerHistorialTarjeta"/>
+</message>
+<message name="obtenerHistorialTarjetaResponse">
+<part name="parameters" element="tns:obtenerHistorialTarjetaResponse"/>
+</message>
+<message name="consultarSaldoDisponible">
+<part name="parameters" element="tns:consultarSaldoDisponible"/>
+</message>
+<message name="consultarSaldoDisponibleResponse">
+<part name="parameters" element="tns:consultarSaldoDisponibleResponse"/>
+</message>
+<message name="validarTarjetaCredito">
+<part name="parameters" element="tns:validarTarjetaCredito"/>
+</message>
+<message name="validarTarjetaCreditoResponse">
+<part name="parameters" element="tns:validarTarjetaCreditoResponse"/>
+</message>
 <portType name="ServicioTarjetaCredito">
-<operation name="realizarTransaccion">
-<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/realizarTransaccionRequest" message="tns:realizarTransaccion"/>
-<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/realizarTransaccionResponse" message="tns:realizarTransaccionResponse"/>
-</operation>
-<operation name="consultarSaldoDisponible">
-<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/consultarSaldoDisponibleRequest" message="tns:consultarSaldoDisponible"/>
-<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/consultarSaldoDisponibleResponse" message="tns:consultarSaldoDisponibleResponse"/>
-</operation>
-<operation name="ActualizarTarjeta">
-<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaRequest" message="tns:ActualizarTarjeta"/>
-<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaResponse" message="tns:ActualizarTarjetaResponse"/>
-</operation>
-<operation name="validarFechaVencimiento">
-<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/validarFechaVencimientoRequest" message="tns:validarFechaVencimiento"/>
-<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/validarFechaVencimientoResponse" message="tns:validarFechaVencimientoResponse"/>
-</operation>
-<operation name="obtenerHistorialTarjeta">
-<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/obtenerHistorialTarjetaRequest" message="tns:obtenerHistorialTarjeta"/>
-<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/obtenerHistorialTarjetaResponse" message="tns:obtenerHistorialTarjetaResponse"/>
-</operation>
-<operation name="validarTarjetaCredito">
-<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/validarTarjetaCreditoRequest" message="tns:validarTarjetaCredito"/>
-<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/validarTarjetaCreditoResponse" message="tns:validarTarjetaCreditoResponse"/>
-</operation>
 <operation name="retirarDinero">
 <input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/retirarDineroRequest" message="tns:retirarDinero"/>
 <output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/retirarDineroResponse" message="tns:retirarDineroResponse"/>
@@ -85,28 +61,52 @@
 <input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/RegistroTarjetaRequest" message="tns:RegistroTarjeta"/>
 <output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/RegistroTarjetaResponse" message="tns:RegistroTarjetaResponse"/>
 </operation>
+<operation name="realizarTransaccion">
+<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/realizarTransaccionRequest" message="tns:realizarTransaccion"/>
+<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/realizarTransaccionResponse" message="tns:realizarTransaccionResponse"/>
+</operation>
+<operation name="validarFechaVencimiento">
+<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/validarFechaVencimientoRequest" message="tns:validarFechaVencimiento"/>
+<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/validarFechaVencimientoResponse" message="tns:validarFechaVencimientoResponse"/>
+</operation>
+<operation name="ActualizarTarjeta">
+<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaRequest" message="tns:ActualizarTarjeta"/>
+<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaResponse" message="tns:ActualizarTarjetaResponse"/>
+</operation>
+<operation name="obtenerHistorialTarjeta">
+<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/obtenerHistorialTarjetaRequest" message="tns:obtenerHistorialTarjeta"/>
+<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/obtenerHistorialTarjetaResponse" message="tns:obtenerHistorialTarjetaResponse"/>
+</operation>
+<operation name="consultarSaldoDisponible">
+<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/consultarSaldoDisponibleRequest" message="tns:consultarSaldoDisponible"/>
+<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/consultarSaldoDisponibleResponse" message="tns:consultarSaldoDisponibleResponse"/>
+</operation>
+<operation name="validarTarjetaCredito">
+<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/validarTarjetaCreditoRequest" message="tns:validarTarjetaCredito"/>
+<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/validarTarjetaCreditoResponse" message="tns:validarTarjetaCreditoResponse"/>
+</operation>
 </portType>
 <binding name="ServicioTarjetaCreditoPortBinding" type="tns:ServicioTarjetaCredito">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="retirarDinero">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="RegistroTarjeta">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="realizarTransaccion">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="consultarSaldoDisponible">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="ActualizarTarjeta">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -124,6 +124,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="ActualizarTarjeta">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="obtenerHistorialTarjeta">
 <soap:operation soapAction=""/>
 <input>
@@ -133,25 +142,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="consultarSaldoDisponible">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="validarTarjetaCredito">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="retirarDinero">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="RegistroTarjeta">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

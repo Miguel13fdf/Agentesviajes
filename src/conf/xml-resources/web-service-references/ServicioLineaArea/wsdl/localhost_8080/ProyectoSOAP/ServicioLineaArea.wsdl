@@ -4,18 +4,6 @@
 <xsd:import namespace="http://servicioLineaAreaWS/" schemaLocation="http://localhost:8080/ProyectoSOAP/ServicioLineaArea?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="BuscarVuelos">
-<part name="parameters" element="tns:BuscarVuelos"/>
-</message>
-<message name="BuscarVuelosResponse">
-<part name="parameters" element="tns:BuscarVuelosResponse"/>
-</message>
-<message name="RegistroHorario">
-<part name="parameters" element="tns:RegistroHorario"/>
-</message>
-<message name="RegistroHorarioResponse">
-<part name="parameters" element="tns:RegistroHorarioResponse"/>
-</message>
 <message name="BuscarLineaArea">
 <part name="parameters" element="tns:BuscarLineaArea"/>
 </message>
@@ -40,15 +28,19 @@
 <message name="RegistroLineaAreaResponse">
 <part name="parameters" element="tns:RegistroLineaAreaResponse"/>
 </message>
+<message name="RegistroHorario">
+<part name="parameters" element="tns:RegistroHorario"/>
+</message>
+<message name="RegistroHorarioResponse">
+<part name="parameters" element="tns:RegistroHorarioResponse"/>
+</message>
+<message name="BuscarVuelos">
+<part name="parameters" element="tns:BuscarVuelos"/>
+</message>
+<message name="BuscarVuelosResponse">
+<part name="parameters" element="tns:BuscarVuelosResponse"/>
+</message>
 <portType name="ServicioLineaArea">
-<operation name="BuscarVuelos">
-<input wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/BuscarVuelosRequest" message="tns:BuscarVuelos"/>
-<output wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/BuscarVuelosResponse" message="tns:BuscarVuelosResponse"/>
-</operation>
-<operation name="RegistroHorario">
-<input wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/RegistroHorarioRequest" message="tns:RegistroHorario"/>
-<output wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/RegistroHorarioResponse" message="tns:RegistroHorarioResponse"/>
-</operation>
 <operation name="BuscarLineaArea">
 <input wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/BuscarLineaAreaRequest" message="tns:BuscarLineaArea"/>
 <output wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/BuscarLineaAreaResponse" message="tns:BuscarLineaAreaResponse"/>
@@ -65,27 +57,17 @@
 <input wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/RegistroLineaAreaRequest" message="tns:RegistroLineaArea"/>
 <output wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/RegistroLineaAreaResponse" message="tns:RegistroLineaAreaResponse"/>
 </operation>
+<operation name="RegistroHorario">
+<input wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/RegistroHorarioRequest" message="tns:RegistroHorario"/>
+<output wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/RegistroHorarioResponse" message="tns:RegistroHorarioResponse"/>
+</operation>
+<operation name="BuscarVuelos">
+<input wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/BuscarVuelosRequest" message="tns:BuscarVuelos"/>
+<output wsam:Action="http://servicioLineaAreaWS/ServicioLineaArea/BuscarVuelosResponse" message="tns:BuscarVuelosResponse"/>
+</operation>
 </portType>
 <binding name="ServicioLineaAreaPortBinding" type="tns:ServicioLineaArea">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="BuscarVuelos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="RegistroHorario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="BuscarLineaArea">
 <soap:operation soapAction=""/>
 <input>
@@ -114,6 +96,24 @@
 </output>
 </operation>
 <operation name="RegistroLineaArea">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="RegistroHorario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="BuscarVuelos">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
