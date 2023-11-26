@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package validators;
+package validator;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,27 +15,50 @@ import java.util.Date;
  */
 public interface IValidator {
 
-    public default boolean validateDate(Date date) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String formattedDate = sdf.format(date);
-        return formattedDate != null && !formattedDate.isEmpty();
+    public default boolean validateDate(String dateString) {
+        if (dateString == null || dateString.isEmpty()) {
+            return false;
+        }
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        sdf.setLenient(false);  // No permitir conversiones automáticas
+
+        try {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(sdf.parse(dateString));
+
+            int year = calendar.get(Calendar.YEAR);
+            int month = calendar.get(Calendar.MONTH);
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+            return year >= 1 && year <= 9999 && month >= 0 && month <= 11 && day >= 1 && day <= calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+        } catch (ParseException e) {
+            return false;
+        }
     }
 
-    public default boolean validateDateRangeCreditCard(Date date) {
+    public default boolean validateDateRangeCreditCard(String date) {
         if (validateDate(date)) {
-            Date currentDate = new Date();
-            // Validamos con la fecha actual tomando la fecha de expiración
-            if (currentDate.before(date)) {
-                //Sabiendo que 
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTime(date);
-                calendar.add(Calendar.YEAR, 5);
-                Date expireIn5Years = calendar.getTime();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            sdf.setLenient(false);
 
-                return currentDate.before(expireIn5Years);
+            try {
+                Date currentDate = new Date();
+                Date expirationDate = sdf.parse(date);
+
+                if (currentDate.before(expirationDate)) {
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(expirationDate);
+                    calendar.add(Calendar.YEAR, 5);
+                    Date expireIn5Years = calendar.getTime();
+
+                    return currentDate.before(expireIn5Years);
+                }
+            } catch (ParseException e) {
+                return false; // Error al parsear la fecha
             }
         }
-        return false;
+        return false; // Fecha no válida
     }
 
     public default boolean validateCost(Double costo) {
