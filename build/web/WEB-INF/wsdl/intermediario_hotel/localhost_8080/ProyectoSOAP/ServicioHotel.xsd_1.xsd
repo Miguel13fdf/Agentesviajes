@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://servicioHotelWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicioHotelWS/">
+
+<xs:element name="cancelarReserva" type="tns:cancelarReserva"/>
+
+<xs:element name="cancelarReservaResponse" type="tns:cancelarReservaResponse"/>
+
+<xs:element name="listarReservas" type="tns:listarReservas"/>
+
+<xs:element name="listarReservasResponse" type="tns:listarReservasResponse"/>
+
+<xs:element name="reservarHotel" type="tns:reservarHotel"/>
+
+<xs:element name="reservarHotelResponse" type="tns:reservarHotelResponse"/>
+
+<xs:element name="verificarDisponibilidad" type="tns:verificarDisponibilidad"/>
+
+<xs:element name="verificarDisponibilidadResponse" type="tns:verificarDisponibilidadResponse"/>
+
+<xs:complexType name="reservarHotel">
+<xs:sequence>
+<xs:element name="nombreCliente" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaInicio" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaFin" type="xs:string" minOccurs="0"/>
+<xs:element name="numeroHabitaciones" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="reservarHotelResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cancelarReserva">
+<xs:sequence>
+<xs:element name="codigoreserva" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cancelarReservaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verificarDisponibilidad">
+<xs:sequence>
+<xs:element name="fechaInicio" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaFin" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verificarDisponibilidadResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarReservas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarReservasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

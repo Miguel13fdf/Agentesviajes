@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://servicioTarjetaWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicioTarjetaWS/">
+
+<xs:element name="ActualizarTarjeta" type="tns:ActualizarTarjeta"/>
+
+<xs:element name="ActualizarTarjetaResponse" type="tns:ActualizarTarjetaResponse"/>
+
+<xs:element name="RegistroTarjeta" type="tns:RegistroTarjeta"/>
+
+<xs:element name="RegistroTarjetaResponse" type="tns:RegistroTarjetaResponse"/>
+
+<xs:element name="consultarSaldoDisponible" type="tns:consultarSaldoDisponible"/>
+
+<xs:element name="consultarSaldoDisponibleResponse" type="tns:consultarSaldoDisponibleResponse"/>
+
+<xs:element name="obtenerHistorialTarjeta" type="tns:obtenerHistorialTarjeta"/>
+
+<xs:element name="obtenerHistorialTarjetaResponse" type="tns:obtenerHistorialTarjetaResponse"/>
+
+<xs:element name="realizarTransaccion" type="tns:realizarTransaccion"/>
+
+<xs:element name="realizarTransaccionResponse" type="tns:realizarTransaccionResponse"/>
+
+<xs:element name="retirarDinero" type="tns:retirarDinero"/>
+
+<xs:element name="retirarDineroResponse" type="tns:retirarDineroResponse"/>
+
+<xs:element name="validarFechaVencimiento" type="tns:validarFechaVencimiento"/>
+
+<xs:element name="validarFechaVencimientoResponse" type="tns:validarFechaVencimientoResponse"/>
+
+<xs:element name="validarTarjetaCredito" type="tns:validarTarjetaCredito"/>
+
+<xs:element name="validarTarjetaCreditoResponse" type="tns:validarTarjetaCreditoResponse"/>
+
+<xs:complexType name="consultarSaldoDisponible">
+<xs:sequence>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarSaldoDisponibleResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="retirarDinero">
+<xs:sequence>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="monto" type="xs:float"/>
+<xs:element name="idCliente" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="retirarDineroResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RegistroTarjeta">
+<xs:sequence>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="titular" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaVencimiento" type="xs:string" minOccurs="0"/>
+<xs:element name="codigoSeguridad" type="xs:string" minOccurs="0"/>
+<xs:element name="saldoDisponible" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RegistroTarjetaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="realizarTransaccion">
+<xs:sequence>
+<xs:element name="numeroTarjeta" type="xs:string" minOccurs="0"/>
+<xs:element name="monto" type="xs:double"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="realizarTransaccionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarFechaVencimiento">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarFechaVencimientoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ActualizarTarjeta">
+<xs:sequence>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="titular" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaVencimiento" type="xs:string" minOccurs="0"/>
+<xs:element name="codigoSeguridad" type="xs:string" minOccurs="0"/>
+<xs:element name="saldoDisponible" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ActualizarTarjetaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarTarjetaCredito">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarTarjetaCreditoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerHistorialTarjeta">
+<xs:sequence>
+<xs:element name="numeroTarjeta" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerHistorialTarjetaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:transaccion" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="transaccion">
+<xs:sequence>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
