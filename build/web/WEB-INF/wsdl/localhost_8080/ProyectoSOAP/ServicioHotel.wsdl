@@ -16,17 +16,17 @@
 <message name="cancelarReservaResponse">
 <part name="parameters" element="tns:cancelarReservaResponse"/>
 </message>
-<message name="listarReservas">
-<part name="parameters" element="tns:listarReservas"/>
-</message>
-<message name="listarReservasResponse">
-<part name="parameters" element="tns:listarReservasResponse"/>
-</message>
 <message name="reservarHotel">
 <part name="parameters" element="tns:reservarHotel"/>
 </message>
 <message name="reservarHotelResponse">
 <part name="parameters" element="tns:reservarHotelResponse"/>
+</message>
+<message name="listarReservas">
+<part name="parameters" element="tns:listarReservas"/>
+</message>
+<message name="listarReservasResponse">
+<part name="parameters" element="tns:listarReservasResponse"/>
 </message>
 <portType name="ServicioHotel">
 <operation name="verificarDisponibilidad">
@@ -37,13 +37,13 @@
 <input wsam:Action="http://servicioHotelWS/ServicioHotel/cancelarReservaRequest" message="tns:cancelarReserva"/>
 <output wsam:Action="http://servicioHotelWS/ServicioHotel/cancelarReservaResponse" message="tns:cancelarReservaResponse"/>
 </operation>
-<operation name="listarReservas">
-<input wsam:Action="http://servicioHotelWS/ServicioHotel/listarReservasRequest" message="tns:listarReservas"/>
-<output wsam:Action="http://servicioHotelWS/ServicioHotel/listarReservasResponse" message="tns:listarReservasResponse"/>
-</operation>
 <operation name="reservarHotel">
 <input wsam:Action="http://servicioHotelWS/ServicioHotel/reservarHotelRequest" message="tns:reservarHotel"/>
 <output wsam:Action="http://servicioHotelWS/ServicioHotel/reservarHotelResponse" message="tns:reservarHotelResponse"/>
+</operation>
+<operation name="listarReservas">
+<input wsam:Action="http://servicioHotelWS/ServicioHotel/listarReservasRequest" message="tns:listarReservas"/>
+<output wsam:Action="http://servicioHotelWS/ServicioHotel/listarReservasResponse" message="tns:listarReservasResponse"/>
 </operation>
 </portType>
 <binding name="ServicioHotelPortBinding" type="tns:ServicioHotel">
@@ -66,7 +66,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="listarReservas">
+<operation name="reservarHotel">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -75,7 +75,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="reservarHotel">
+<operation name="listarReservas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

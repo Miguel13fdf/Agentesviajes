@@ -7,7 +7,6 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.Action;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
@@ -28,102 +27,6 @@ public interface ServicioLineaArea {
 
     /**
      * 
-     * @param nombre
-     * @return
-     *     returns serviciolineaareaws.LineaArea
-     */
-    @WebMethod(operationName = "BuscarLineaArea")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "BuscarLineaArea", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.BuscarLineaArea")
-    @ResponseWrapper(localName = "BuscarLineaAreaResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.BuscarLineaAreaResponse")
-    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/BuscarLineaAreaRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/BuscarLineaAreaResponse")
-    public LineaArea buscarLineaArea(
-        @WebParam(name = "nombre", targetNamespace = "")
-        String nombre);
-
-    /**
-     * 
-     * @param numeroVuelo
-     * @return
-     *     returns java.lang.Boolean
-     */
-    @WebMethod(operationName = "AnularVuelo")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AnularVuelo", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.AnularVuelo")
-    @ResponseWrapper(localName = "AnularVueloResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.AnularVueloResponse")
-    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/AnularVueloRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/AnularVueloResponse")
-    public Boolean anularVuelo(
-        @WebParam(name = "numeroVuelo", targetNamespace = "")
-        String numeroVuelo);
-
-    /**
-     * 
-     * @param nuevaHora
-     * @param numeroVuelo
-     * @param nuevaFecha
-     * @return
-     *     returns boolean
-     */
-    @WebMethod(operationName = "CambiarVuelo")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CambiarVuelo", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.CambiarVuelo")
-    @ResponseWrapper(localName = "CambiarVueloResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.CambiarVueloResponse")
-    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/CambiarVueloRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/CambiarVueloResponse")
-    public boolean cambiarVuelo(
-        @WebParam(name = "numeroVuelo", targetNamespace = "")
-        int numeroVuelo,
-        @WebParam(name = "nuevaFecha", targetNamespace = "")
-        String nuevaFecha,
-        @WebParam(name = "nuevaHora", targetNamespace = "")
-        String nuevaHora);
-
-    /**
-     * 
-     * @param arg2
-     * @param id
-     * @param nombre
-     * @return
-     *     returns boolean
-     */
-    @WebMethod(operationName = "RegistroLineaArea")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "RegistroLineaArea", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.RegistroLineaArea")
-    @ResponseWrapper(localName = "RegistroLineaAreaResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.RegistroLineaAreaResponse")
-    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/RegistroLineaAreaRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/RegistroLineaAreaResponse")
-    public boolean registroLineaArea(
-        @WebParam(name = "id", targetNamespace = "")
-        int id,
-        @WebParam(name = "nombre", targetNamespace = "")
-        String nombre,
-        @WebParam(name = "arg2", targetNamespace = "")
-        List<HorarioVuelo> arg2);
-
-    /**
-     * 
-     * @param fecha
-     * @param horaLLegada
-     * @param id
-     * @param horaSalida
-     * @return
-     *     returns boolean
-     */
-    @WebMethod(operationName = "RegistroHorario")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "RegistroHorario", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.RegistroHorario")
-    @ResponseWrapper(localName = "RegistroHorarioResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.RegistroHorarioResponse")
-    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/RegistroHorarioRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/RegistroHorarioResponse")
-    public boolean registroHorario(
-        @WebParam(name = "id", targetNamespace = "")
-        String id,
-        @WebParam(name = "fecha", targetNamespace = "")
-        XMLGregorianCalendar fecha,
-        @WebParam(name = "horaSalida", targetNamespace = "")
-        String horaSalida,
-        @WebParam(name = "horaLLegada", targetNamespace = "")
-        String horaLLegada);
-
-    /**
-     * 
      * @param fecha
      * @param hora
      * @return
@@ -136,8 +39,131 @@ public interface ServicioLineaArea {
     @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/BuscarVuelosRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/BuscarVuelosResponse")
     public List<HorarioVuelo> buscarVuelos(
         @WebParam(name = "fecha", targetNamespace = "")
-        XMLGregorianCalendar fecha,
+        String fecha,
         @WebParam(name = "hora", targetNamespace = "")
         String hora);
+
+    /**
+     * 
+     * @param id
+     * @param idHorarios
+     * @param nombre
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "RegistroLineaAerea")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "RegistroLineaAerea", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.RegistroLineaAerea")
+    @ResponseWrapper(localName = "RegistroLineaAereaResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.RegistroLineaAereaResponse")
+    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/RegistroLineaAereaRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/RegistroLineaAereaResponse")
+    public String registroLineaAerea(
+        @WebParam(name = "id", targetNamespace = "")
+        int id,
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre,
+        @WebParam(name = "idHorarios", targetNamespace = "")
+        List<String> idHorarios);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "ListarLieneasAereas")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ListarLieneasAereas", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.ListarLieneasAereas")
+    @ResponseWrapper(localName = "ListarLieneasAereasResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.ListarLieneasAereasResponse")
+    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/ListarLieneasAereasRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/ListarLieneasAereasResponse")
+    public String listarLieneasAereas();
+
+    /**
+     * 
+     * @param numeroVuelo
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AnularVuelo")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AnularVuelo", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.AnularVuelo")
+    @ResponseWrapper(localName = "AnularVueloResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.AnularVueloResponse")
+    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/AnularVueloRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/AnularVueloResponse")
+    public String anularVuelo(
+        @WebParam(name = "numeroVuelo", targetNamespace = "")
+        String numeroVuelo);
+
+    /**
+     * 
+     * @param fecha
+     * @param horaLLegada
+     * @param id
+     * @param horaSalida
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "RegistroHorario")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "RegistroHorario", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.RegistroHorario")
+    @ResponseWrapper(localName = "RegistroHorarioResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.RegistroHorarioResponse")
+    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/RegistroHorarioRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/RegistroHorarioResponse")
+    public String registroHorario(
+        @WebParam(name = "id", targetNamespace = "")
+        String id,
+        @WebParam(name = "fecha", targetNamespace = "")
+        String fecha,
+        @WebParam(name = "horaSalida", targetNamespace = "")
+        String horaSalida,
+        @WebParam(name = "horaLLegada", targetNamespace = "")
+        String horaLLegada);
+
+    /**
+     * 
+     * @param nuevaHoraSalida
+     * @param nuevaHoraLlegada
+     * @param numeroVuelo
+     * @param nuevaFecha
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "cambiarVuelo", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.CambiarVuelo")
+    @ResponseWrapper(localName = "cambiarVueloResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.CambiarVueloResponse")
+    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/cambiarVueloRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/cambiarVueloResponse")
+    public String cambiarVuelo(
+        @WebParam(name = "numeroVuelo", targetNamespace = "")
+        String numeroVuelo,
+        @WebParam(name = "nuevaFecha", targetNamespace = "")
+        String nuevaFecha,
+        @WebParam(name = "nuevaHoraSalida", targetNamespace = "")
+        String nuevaHoraSalida,
+        @WebParam(name = "nuevaHoraLlegada", targetNamespace = "")
+        String nuevaHoraLlegada);
+
+    /**
+     * 
+     * @param nombre
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "BuscarLineaArea")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "BuscarLineaArea", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.BuscarLineaArea")
+    @ResponseWrapper(localName = "BuscarLineaAreaResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.BuscarLineaAreaResponse")
+    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/BuscarLineaAreaRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/BuscarLineaAreaResponse")
+    public String buscarLineaArea(
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "ListarHorarios")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ListarHorarios", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.ListarHorarios")
+    @ResponseWrapper(localName = "ListarHorariosResponse", targetNamespace = "http://servicioLineaAreaWS/", className = "serviciolineaareaws.ListarHorariosResponse")
+    @Action(input = "http://servicioLineaAreaWS/ServicioLineaArea/ListarHorariosRequest", output = "http://servicioLineaAreaWS/ServicioLineaArea/ListarHorariosResponse")
+    public String listarHorarios();
 
 }

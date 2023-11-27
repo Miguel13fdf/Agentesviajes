@@ -7,21 +7,21 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Regístrese complex type.
+ * <p>Clase Java para Registro complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="Regístrese"&gt;
+ * &lt;complexType name="Registro"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="apellido" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="cedula" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="usuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="contraseña" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="contraseña1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="usuaio" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="contrasena" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="contrasena1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -31,22 +31,22 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Reg\u00edstrese", propOrder = {
+@XmlType(name = "Registro", propOrder = {
     "nombre",
     "apellido",
     "cedula",
-    "usuario",
-    "contrase\u00f1a",
-    "contrase\u00f1a1"
+    "usuaio",
+    "contrasena",
+    "contrasena1"
 })
-public class Regístrese {
+public class Registro {
 
     protected String nombre;
     protected String apellido;
     protected String cedula;
-    protected String usuario;
-    protected String contraseña;
-    protected String contraseña1;
+    protected String usuaio;
+    protected String contrasena;
+    protected String contrasena1;
 
     /**
      * Obtiene el valor de la propiedad nombre.
@@ -121,75 +121,75 @@ public class Regístrese {
     }
 
     /**
-     * Obtiene el valor de la propiedad usuario.
+     * Obtiene el valor de la propiedad usuaio.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getUsuario() {
-        return usuario;
+    public String getUsuaio() {
+        return usuaio;
     }
 
     /**
-     * Define el valor de la propiedad usuario.
+     * Define el valor de la propiedad usuaio.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setUsuario(String value) {
-        this.usuario = value;
+    public void setUsuaio(String value) {
+        this.usuaio = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad contraseña.
+     * Obtiene el valor de la propiedad contrasena.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
     /**
-     * Define el valor de la propiedad contraseña.
+     * Define el valor de la propiedad contrasena.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setContraseña(String value) {
-        this.contraseña = value;
+    public void setContrasena(String value) {
+        this.contrasena = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad contraseña1.
+     * Obtiene el valor de la propiedad contrasena1.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getContraseña1() {
-        return contraseña1;
+    public String getContrasena1() {
+        return contrasena1;
     }
 
     /**
-     * Define el valor de la propiedad contraseña1.
+     * Define el valor de la propiedad contrasena1.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setContraseña1(String value) {
-        this.contraseña1 = value;
+    public void setContrasena1(String value) {
+        this.contrasena1 = value;
     }
 
 }

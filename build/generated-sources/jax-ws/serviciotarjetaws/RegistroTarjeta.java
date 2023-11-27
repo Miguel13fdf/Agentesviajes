@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="fechaVencimiento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="codigoSeguridad" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="saldoDisponible" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="cliente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,7 +36,8 @@ import javax.xml.bind.annotation.XmlType;
     "titular",
     "fechaVencimiento",
     "codigoSeguridad",
-    "saldoDisponible"
+    "saldoDisponible",
+    "cliente"
 })
 public class RegistroTarjeta {
 
@@ -44,6 +46,7 @@ public class RegistroTarjeta {
     protected String fechaVencimiento;
     protected String codigoSeguridad;
     protected float saldoDisponible;
+    protected String cliente;
 
     /**
      * Obtiene el valor de la propiedad numero.
@@ -155,6 +158,30 @@ public class RegistroTarjeta {
      */
     public void setSaldoDisponible(float value) {
         this.saldoDisponible = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad cliente.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCliente() {
+        return cliente;
+    }
+
+    /**
+     * Define el valor de la propiedad cliente.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCliente(String value) {
+        this.cliente = value;
     }
 
 }

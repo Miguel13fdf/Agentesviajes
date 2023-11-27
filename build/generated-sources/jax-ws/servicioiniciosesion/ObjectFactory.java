@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Regístrese_QNAME = new QName("http://servicioInicioSesion/", "Reg\u00edstrese");
-    private final static QName _RegístreseResponse_QNAME = new QName("http://servicioInicioSesion/", "Reg\u00edstreseResponse");
+    private final static QName _Registro_QNAME = new QName("http://servicioInicioSesion/", "Registro");
+    private final static QName _RegistroResponse_QNAME = new QName("http://servicioInicioSesion/", "RegistroResponse");
     private final static QName _Login_QNAME = new QName("http://servicioInicioSesion/", "login");
     private final static QName _LoginResponse_QNAME = new QName("http://servicioInicioSesion/", "loginResponse");
 
@@ -37,19 +37,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Regístrese }
+     * Create an instance of {@link Registro }
      * 
      */
-    public Regístrese createRegístrese() {
-        return new Regístrese();
+    public Registro createRegistro() {
+        return new Registro();
     }
 
     /**
-     * Create an instance of {@link RegístreseResponse }
+     * Create an instance of {@link RegistroResponse }
      * 
      */
-    public RegístreseResponse createRegístreseResponse() {
-        return new RegístreseResponse();
+    public RegistroResponse createRegistroResponse() {
+        return new RegistroResponse();
     }
 
     /**
@@ -69,37 +69,29 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Cliente }
-     * 
-     */
-    public Cliente createCliente() {
-        return new Cliente();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Regístrese }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Registro }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link Regístrese }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link Registro }{@code >}
      */
-    @XmlElementDecl(namespace = "http://servicioInicioSesion/", name = "Reg\u00edstrese")
-    public JAXBElement<Regístrese> createRegístrese(Regístrese value) {
-        return new JAXBElement<Regístrese>(_Regístrese_QNAME, Regístrese.class, null, value);
+    @XmlElementDecl(namespace = "http://servicioInicioSesion/", name = "Registro")
+    public JAXBElement<Registro> createRegistro(Registro value) {
+        return new JAXBElement<Registro>(_Registro_QNAME, Registro.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegístreseResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistroResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegístreseResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link RegistroResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://servicioInicioSesion/", name = "Reg\u00edstreseResponse")
-    public JAXBElement<RegístreseResponse> createRegístreseResponse(RegístreseResponse value) {
-        return new JAXBElement<RegístreseResponse>(_RegístreseResponse_QNAME, RegístreseResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicioInicioSesion/", name = "RegistroResponse")
+    public JAXBElement<RegistroResponse> createRegistroResponse(RegistroResponse value) {
+        return new JAXBElement<RegistroResponse>(_RegistroResponse_QNAME, RegistroResponse.class, null, value);
     }
 
     /**

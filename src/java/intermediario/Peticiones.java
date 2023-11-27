@@ -7,8 +7,7 @@ package intermediario;
 
 
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
+
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,16 +17,16 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import serviciohotelws.ServicioHotel;
 import serviciohotelws.ServicioHotel_Service;
-import servicioiniciosesion.Cliente;
+
 import servicioiniciosesion.InicioSesion;
 import servicioiniciosesion.InicioSesion_Service;
-import serviciolineaareaws.HorarioVuelo;
-import serviciolineaareaws.LineaArea;
+
+
 import serviciolineaareaws.ServicioLineaArea;
 import serviciolineaareaws.ServicioLineaArea_Service;
 import serviciotarjetaws.ServicioTarjetaCredito;
 import serviciotarjetaws.ServicioTarjetaCredito_Service;
-import serviciotarjetaws.Transaccion;
+
 
 /**
  *
@@ -166,118 +165,17 @@ public class Peticiones {
     
      ServicioLineaArea_Service serviciolineaarea = new ServicioLineaArea_Service();
      ServicioLineaArea cliente2 = serviciolineaarea.getServicioLineaAreaPort();
-       @WebMethod(operationName = "RegistroHorario")
-       //falta excepciones
-    public boolean RegistroHorario(@WebParam(name = "id") String idhorario,
-            @WebParam(name = "fecha") Date fecha,
-            @WebParam(name = "horaSalida") String horaSalida,
-            @WebParam(name = "horaLLegada") String horaLlegada) {
-        return cliente2.registroHorario(idhorario, fecha, horaSalida, horaLlegada);//falta validacion de fecha de date a string 
-    }
-    //excepciones
-    
-     @WebMethod(operationName = "RegistroLineaArea")
-    public boolean RegistroLineaArea(@WebParam(name = "id") int idLinea,
-            @WebParam(name = "nombre") String nombre,
-            @WebParam(name = "horarios") List<HorarioVuelo> horarios) {
-        return cliente2.registroLineaArea(idLinea, nombre, horarios);
-    }
-    //excepciones
-
-    @WebMethod(operationName = "BuscarLineaArea")
-    public LineaArea buscarLineaArea(@WebParam(name = "nombre") String nombre) {
-        return cliente2.buscarLineaArea(nombre);
-    }
-//excepciones
-    @WebMethod(operationName = "BuscarVuelos")
-    public List<HorarioVuelo> buscarVuelosDisponibles(@WebParam(name = "fecha") Date fecha,
-            @WebParam(name = "hora") String hora) {
-        return cliente2.buscarVuelos(fecha, hora);//validacion de fecha
-    }
-
-    @WebMethod(operationName = "CambiarVuelo")
-    public boolean cambiarVuelo(@WebParam(name = "numeroVuelo") int idVuelo,
-            @WebParam(name = "nuevaFecha") String nuevaFecha,
-            @WebParam(name = "nuevaHora") String nuevaHora) {
-        return cliente2.cambiarVuelo(idVuelo, nuevaFecha, nuevaHora);
-    }
-
-    @WebMethod(operationName = "AnularVuelo")
-    public Boolean anularVuelo(@WebParam(name = "numeroVuelo") String numeroVuelo) {
-        return cliente2.anularVuelo(numeroVuelo);
-    }
+     
     
      InicioSesion_Service servicioiniciosesion = new InicioSesion_Service();
      InicioSesion cliente3 = servicioiniciosesion.getInicioSesionPort();
      //excepciones
-     @WebMethod(operationName = "login")
-    public Cliente login(@WebParam(name = "username") String usuario, @WebParam(name = "password") String contraseña) {
-        return cliente3.login(usuario, usuario);
-    }
-
-    @WebMethod(operationName = "Regístrese")
-    public boolean registrese(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "cedula") String cedula,
-            @WebParam(name = "usuario") String usuario, @WebParam(name = "contraseña") String contra, @WebParam(name = "contraseña1") String contra1) {
-
-        return cliente3.regístrese(nombre, apellido, cedula, usuario, contra, contra1);
-    }
+    
      ServicioTarjetaCredito_Service servicioitarjetacredito = new ServicioTarjetaCredito_Service();
      ServicioTarjetaCredito cliente4 = servicioitarjetacredito.getServicioTarjetaCreditoPort();
-     //Manejo de excepciones
-       @WebMethod(operationName = "RegistroTarjeta")
-    public boolean Registro(@WebParam(name = "numero") String numero,
-            @WebParam(name = "titular") String titular,
-            @WebParam(name = "fechaVencimiento") String fechaVencimiento,
-            @WebParam(name = "codigoSeguridad") String codigoSeguridad,
-            @WebParam(name = "saldoDisponible") float saldoDisponible) {
-      
-        return cliente4.registroTarjeta(numero, titular, fechaVencimiento, codigoSeguridad, saldoDisponible); 
-    }
-
-    //METODO PARA ACTUALIZAR LA TARJETA DE CREDITO
-    @WebMethod(operationName = "ActualizarTarjeta")
-    public boolean ActualizarTarjeta(@WebParam(name = "numero") String numero,
-            @WebParam(name = "titular") String titular,
-            @WebParam(name = "fechaVencimiento") String fechaVencimiento,
-            @WebParam(name = "codigoSeguridad") String codigoSeguridad,
-            @WebParam(name = "saldoDisponible") float saldoDisponible) {
-      
-        return cliente4.actualizarTarjeta(numero, titular, fechaVencimiento, codigoSeguridad, saldoDisponible); 
-    }
+     
 
    
-
-    //METODO PARA CONSULTAR SALDO DISPONIBLE
-    @WebMethod(operationName = "consultarSaldoDisponible")
-    public Float consultarSaldoDisponible(@WebParam(name = "numero") String numeroTarjeta) {
-         return cliente4.consultarSaldoDisponible(numeroTarjeta);
-    }
-
-    //METODO PARA REALIZAR TRANSACCIONES
-    @WebMethod
-    public boolean realizarTransaccion(@WebParam(name = "numeroTarjeta") String numeroTarjeta,
-            @WebParam(name = "monto") double monto,
-            @WebParam(name = "descripcion") String descripcion,
-            @WebParam(name = "fecha") Date fecha) {
-
-         return cliente4.realizarTransaccion(numeroTarjeta, monto, descripcion, fecha);
-    }
-
-    //METODO PARA VER EL HISTORIAL DE LA TARJETA DE CREDITO
-    @WebMethod
-    public List<Transaccion> obtenerHistorialTarjeta(@WebParam(name = "numeroTarjeta") String numeroTarjeta) {
-        return cliente4.obtenerHistorialTarjeta(numeroTarjeta);
-    }
-    
-
-    //METODO PARA RETIRAR DINERO
-    @WebMethod(operationName = "retirarDinero")
-    public boolean retirarDinero(@WebParam(name = "numero") String numeroTarjeta,
-            @WebParam(name = "monto") float monto,
-            @WebParam(name = "idCliente") int idCliente) {
-         return cliente4.retirarDinero(numeroTarjeta, monto, idCliente);
-    }
-
     
     
 

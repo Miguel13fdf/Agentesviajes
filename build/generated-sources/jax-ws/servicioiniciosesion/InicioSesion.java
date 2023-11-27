@@ -26,50 +26,50 @@ public interface InicioSesion {
 
     /**
      * 
-     * @param contraseña1
-     * @param cedula
-     * @param apellido
-     * @param usuario
-     * @param nombre
-     * @param contraseña
-     * @return
-     *     returns boolean
-     */
-    @WebMethod(operationName = "Reg\u00edstrese")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Reg\u00edstrese", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.Reg\u00edstrese")
-    @ResponseWrapper(localName = "Reg\u00edstreseResponse", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.Reg\u00edstreseResponse")
-    @Action(input = "http://servicioInicioSesion/InicioSesion/Reg\u00edstreseRequest", output = "http://servicioInicioSesion/InicioSesion/Reg\u00edstreseResponse")
-    public boolean regístrese(
-        @WebParam(name = "nombre", targetNamespace = "")
-        String nombre,
-        @WebParam(name = "apellido", targetNamespace = "")
-        String apellido,
-        @WebParam(name = "cedula", targetNamespace = "")
-        String cedula,
-        @WebParam(name = "usuario", targetNamespace = "")
-        String usuario,
-        @WebParam(name = "contrase\u00f1a", targetNamespace = "")
-        String contraseña,
-        @WebParam(name = "contrase\u00f1a1", targetNamespace = "")
-        String contraseña1);
-
-    /**
-     * 
      * @param password
      * @param username
      * @return
-     *     returns servicioiniciosesion.Cliente
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "login", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.Login")
     @ResponseWrapper(localName = "loginResponse", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.LoginResponse")
     @Action(input = "http://servicioInicioSesion/InicioSesion/loginRequest", output = "http://servicioInicioSesion/InicioSesion/loginResponse")
-    public Cliente login(
+    public String login(
         @WebParam(name = "username", targetNamespace = "")
         String username,
         @WebParam(name = "password", targetNamespace = "")
         String password);
+
+    /**
+     * 
+     * @param usuaio
+     * @param contrasena1
+     * @param cedula
+     * @param apellido
+     * @param contrasena
+     * @param nombre
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "Registro")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Registro", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.Registro")
+    @ResponseWrapper(localName = "RegistroResponse", targetNamespace = "http://servicioInicioSesion/", className = "servicioiniciosesion.RegistroResponse")
+    @Action(input = "http://servicioInicioSesion/InicioSesion/RegistroRequest", output = "http://servicioInicioSesion/InicioSesion/RegistroResponse")
+    public String registro(
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre,
+        @WebParam(name = "apellido", targetNamespace = "")
+        String apellido,
+        @WebParam(name = "cedula", targetNamespace = "")
+        String cedula,
+        @WebParam(name = "usuaio", targetNamespace = "")
+        String usuaio,
+        @WebParam(name = "contrasena", targetNamespace = "")
+        String contrasena,
+        @WebParam(name = "contrasena1", targetNamespace = "")
+        String contrasena1);
 
 }

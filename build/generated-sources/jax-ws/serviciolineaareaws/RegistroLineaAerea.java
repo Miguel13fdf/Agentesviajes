@@ -9,18 +9,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para RegistroLineaArea complex type.
+ * <p>Clase Java para RegistroLineaAerea complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="RegistroLineaArea"&gt;
+ * &lt;complexType name="RegistroLineaAerea"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="arg2" type="{http://servicioLineaAreaWS/}horarioVuelo" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="idHorarios" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -30,16 +30,16 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RegistroLineaArea", propOrder = {
+@XmlType(name = "RegistroLineaAerea", propOrder = {
     "id",
     "nombre",
-    "arg2"
+    "idHorarios"
 })
-public class RegistroLineaArea {
+public class RegistroLineaAerea {
 
     protected int id;
     protected String nombre;
-    protected List<HorarioVuelo> arg2;
+    protected List<String> idHorarios;
 
     /**
      * Obtiene el valor de la propiedad id.
@@ -82,32 +82,32 @@ public class RegistroLineaArea {
     }
 
     /**
-     * Gets the value of the arg2 property.
+     * Gets the value of the idHorarios property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the arg2 property.
+     * This is why there is not a <CODE>set</CODE> method for the idHorarios property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getArg2().add(newItem);
+     *    getIdHorarios().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link HorarioVuelo }
+     * {@link String }
      * 
      * 
      */
-    public List<HorarioVuelo> getArg2() {
-        if (arg2 == null) {
-            arg2 = new ArrayList<HorarioVuelo>();
+    public List<String> getIdHorarios() {
+        if (idHorarios == null) {
+            idHorarios = new ArrayList<String>();
         }
-        return this.arg2;
+        return this.idHorarios;
     }
 
 }

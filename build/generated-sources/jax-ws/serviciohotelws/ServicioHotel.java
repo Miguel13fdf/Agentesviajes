@@ -26,33 +26,6 @@ public interface ServicioHotel {
 
     /**
      * 
-     * @param codigoreserva
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "cancelarReserva", targetNamespace = "http://servicioHotelWS/", className = "serviciohotelws.CancelarReserva")
-    @ResponseWrapper(localName = "cancelarReservaResponse", targetNamespace = "http://servicioHotelWS/", className = "serviciohotelws.CancelarReservaResponse")
-    @Action(input = "http://servicioHotelWS/ServicioHotel/cancelarReservaRequest", output = "http://servicioHotelWS/ServicioHotel/cancelarReservaResponse")
-    public String cancelarReserva(
-        @WebParam(name = "codigoreserva", targetNamespace = "")
-        String codigoreserva);
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarReservas", targetNamespace = "http://servicioHotelWS/", className = "serviciohotelws.ListarReservas")
-    @ResponseWrapper(localName = "listarReservasResponse", targetNamespace = "http://servicioHotelWS/", className = "serviciohotelws.ListarReservasResponse")
-    @Action(input = "http://servicioHotelWS/ServicioHotel/listarReservasRequest", output = "http://servicioHotelWS/ServicioHotel/listarReservasResponse")
-    public String listarReservas();
-
-    /**
-     * 
      * @param fechaInicio
      * @param fechaFin
      * @return
@@ -68,6 +41,21 @@ public interface ServicioHotel {
         String fechaInicio,
         @WebParam(name = "fechaFin", targetNamespace = "")
         String fechaFin);
+
+    /**
+     * 
+     * @param codigoreserva
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "cancelarReserva", targetNamespace = "http://servicioHotelWS/", className = "serviciohotelws.CancelarReserva")
+    @ResponseWrapper(localName = "cancelarReservaResponse", targetNamespace = "http://servicioHotelWS/", className = "serviciohotelws.CancelarReservaResponse")
+    @Action(input = "http://servicioHotelWS/ServicioHotel/cancelarReservaRequest", output = "http://servicioHotelWS/ServicioHotel/cancelarReservaResponse")
+    public String cancelarReserva(
+        @WebParam(name = "codigoreserva", targetNamespace = "")
+        String codigoreserva);
 
     /**
      * 
@@ -92,5 +80,17 @@ public interface ServicioHotel {
         String fechaFin,
         @WebParam(name = "numeroHabitaciones", targetNamespace = "")
         Integer numeroHabitaciones);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarReservas", targetNamespace = "http://servicioHotelWS/", className = "serviciohotelws.ListarReservas")
+    @ResponseWrapper(localName = "listarReservasResponse", targetNamespace = "http://servicioHotelWS/", className = "serviciohotelws.ListarReservasResponse")
+    @Action(input = "http://servicioHotelWS/ServicioHotel/listarReservasRequest", output = "http://servicioHotelWS/ServicioHotel/listarReservasResponse")
+    public String listarReservas();
 
 }

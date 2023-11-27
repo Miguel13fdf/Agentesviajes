@@ -4,23 +4,17 @@
 <xsd:import namespace="http://servicioHotelWS/" schemaLocation="http://localhost:8080/ProyectoSOAP/ServicioHotel?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="cancelarReserva">
-<part name="parameters" element="tns:cancelarReserva"/>
-</message>
-<message name="cancelarReservaResponse">
-<part name="parameters" element="tns:cancelarReservaResponse"/>
-</message>
-<message name="listarReservas">
-<part name="parameters" element="tns:listarReservas"/>
-</message>
-<message name="listarReservasResponse">
-<part name="parameters" element="tns:listarReservasResponse"/>
-</message>
 <message name="verificarDisponibilidad">
 <part name="parameters" element="tns:verificarDisponibilidad"/>
 </message>
 <message name="verificarDisponibilidadResponse">
 <part name="parameters" element="tns:verificarDisponibilidadResponse"/>
+</message>
+<message name="cancelarReserva">
+<part name="parameters" element="tns:cancelarReserva"/>
+</message>
+<message name="cancelarReservaResponse">
+<part name="parameters" element="tns:cancelarReservaResponse"/>
 </message>
 <message name="reservarHotel">
 <part name="parameters" element="tns:reservarHotel"/>
@@ -28,44 +22,32 @@
 <message name="reservarHotelResponse">
 <part name="parameters" element="tns:reservarHotelResponse"/>
 </message>
+<message name="listarReservas">
+<part name="parameters" element="tns:listarReservas"/>
+</message>
+<message name="listarReservasResponse">
+<part name="parameters" element="tns:listarReservasResponse"/>
+</message>
 <portType name="ServicioHotel">
-<operation name="cancelarReserva">
-<input wsam:Action="http://servicioHotelWS/ServicioHotel/cancelarReservaRequest" message="tns:cancelarReserva"/>
-<output wsam:Action="http://servicioHotelWS/ServicioHotel/cancelarReservaResponse" message="tns:cancelarReservaResponse"/>
-</operation>
-<operation name="listarReservas">
-<input wsam:Action="http://servicioHotelWS/ServicioHotel/listarReservasRequest" message="tns:listarReservas"/>
-<output wsam:Action="http://servicioHotelWS/ServicioHotel/listarReservasResponse" message="tns:listarReservasResponse"/>
-</operation>
 <operation name="verificarDisponibilidad">
 <input wsam:Action="http://servicioHotelWS/ServicioHotel/verificarDisponibilidadRequest" message="tns:verificarDisponibilidad"/>
 <output wsam:Action="http://servicioHotelWS/ServicioHotel/verificarDisponibilidadResponse" message="tns:verificarDisponibilidadResponse"/>
+</operation>
+<operation name="cancelarReserva">
+<input wsam:Action="http://servicioHotelWS/ServicioHotel/cancelarReservaRequest" message="tns:cancelarReserva"/>
+<output wsam:Action="http://servicioHotelWS/ServicioHotel/cancelarReservaResponse" message="tns:cancelarReservaResponse"/>
 </operation>
 <operation name="reservarHotel">
 <input wsam:Action="http://servicioHotelWS/ServicioHotel/reservarHotelRequest" message="tns:reservarHotel"/>
 <output wsam:Action="http://servicioHotelWS/ServicioHotel/reservarHotelResponse" message="tns:reservarHotelResponse"/>
 </operation>
+<operation name="listarReservas">
+<input wsam:Action="http://servicioHotelWS/ServicioHotel/listarReservasRequest" message="tns:listarReservas"/>
+<output wsam:Action="http://servicioHotelWS/ServicioHotel/listarReservasResponse" message="tns:listarReservasResponse"/>
+</operation>
 </portType>
 <binding name="ServicioHotelPortBinding" type="tns:ServicioHotel">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="cancelarReserva">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarReservas">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="verificarDisponibilidad">
 <soap:operation soapAction=""/>
 <input>
@@ -75,7 +57,25 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="cancelarReserva">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="reservarHotel">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="listarReservas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -24,12 +24,12 @@ public class MainPeticiones {
         Peticiones peticiones = new Peticiones();
 
 //        // Realizar una reserva exitosa
-        String resultadoReservaExitosa = peticiones.realizarReserva("Juan Pérez", "2023-12-01", "2023-12-05", 1);
-        System.out.println("Resultado Reserva Exitosa: " + resultadoReservaExitosa);
+//        String resultadoReservaExitosa = peticiones.realizarReserva("Juan Pérez", "2023-12-01", "2023-12-05", 1);
+//        System.out.println("Resultado Reserva Exitosa: " + resultadoReservaExitosa);
 
 //        // Aqui para probar que pasa en una reserva con datos incorrectos
-//        String resultadoReservaInvalida = peticiones.realizarReserva(null, "", "2023-12-05", 0);
-//        System.out.println("Resultado Reserva Inválida: " + resultadoReservaInvalida);
+        String resultadoReservaInvalida = peticiones.realizarReserva(null, "", "2023-12-05", 0);
+        System.out.println("Resultado Reserva Inválida: " + resultadoReservaInvalida);
 
         // Muestra el contenido del archivo de registro "actividad.log"
         // Se debe ajustar la ruta del archivo según donde se haya creado

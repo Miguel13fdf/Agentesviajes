@@ -30,12 +30,16 @@ public class ObjectFactory {
     private final static QName _BuscarLineaAreaResponse_QNAME = new QName("http://servicioLineaAreaWS/", "BuscarLineaAreaResponse");
     private final static QName _BuscarVuelos_QNAME = new QName("http://servicioLineaAreaWS/", "BuscarVuelos");
     private final static QName _BuscarVuelosResponse_QNAME = new QName("http://servicioLineaAreaWS/", "BuscarVuelosResponse");
-    private final static QName _CambiarVuelo_QNAME = new QName("http://servicioLineaAreaWS/", "CambiarVuelo");
-    private final static QName _CambiarVueloResponse_QNAME = new QName("http://servicioLineaAreaWS/", "CambiarVueloResponse");
+    private final static QName _ListarHorarios_QNAME = new QName("http://servicioLineaAreaWS/", "ListarHorarios");
+    private final static QName _ListarHorariosResponse_QNAME = new QName("http://servicioLineaAreaWS/", "ListarHorariosResponse");
+    private final static QName _ListarLieneasAereas_QNAME = new QName("http://servicioLineaAreaWS/", "ListarLieneasAereas");
+    private final static QName _ListarLieneasAereasResponse_QNAME = new QName("http://servicioLineaAreaWS/", "ListarLieneasAereasResponse");
     private final static QName _RegistroHorario_QNAME = new QName("http://servicioLineaAreaWS/", "RegistroHorario");
     private final static QName _RegistroHorarioResponse_QNAME = new QName("http://servicioLineaAreaWS/", "RegistroHorarioResponse");
-    private final static QName _RegistroLineaArea_QNAME = new QName("http://servicioLineaAreaWS/", "RegistroLineaArea");
-    private final static QName _RegistroLineaAreaResponse_QNAME = new QName("http://servicioLineaAreaWS/", "RegistroLineaAreaResponse");
+    private final static QName _RegistroLineaAerea_QNAME = new QName("http://servicioLineaAreaWS/", "RegistroLineaAerea");
+    private final static QName _RegistroLineaAereaResponse_QNAME = new QName("http://servicioLineaAreaWS/", "RegistroLineaAereaResponse");
+    private final static QName _CambiarVuelo_QNAME = new QName("http://servicioLineaAreaWS/", "cambiarVuelo");
+    private final static QName _CambiarVueloResponse_QNAME = new QName("http://servicioLineaAreaWS/", "cambiarVueloResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: serviciolineaareaws
@@ -93,19 +97,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CambiarVuelo }
+     * Create an instance of {@link ListarHorarios }
      * 
      */
-    public CambiarVuelo createCambiarVuelo() {
-        return new CambiarVuelo();
+    public ListarHorarios createListarHorarios() {
+        return new ListarHorarios();
     }
 
     /**
-     * Create an instance of {@link CambiarVueloResponse }
+     * Create an instance of {@link ListarHorariosResponse }
      * 
      */
-    public CambiarVueloResponse createCambiarVueloResponse() {
-        return new CambiarVueloResponse();
+    public ListarHorariosResponse createListarHorariosResponse() {
+        return new ListarHorariosResponse();
+    }
+
+    /**
+     * Create an instance of {@link ListarLieneasAereas }
+     * 
+     */
+    public ListarLieneasAereas createListarLieneasAereas() {
+        return new ListarLieneasAereas();
+    }
+
+    /**
+     * Create an instance of {@link ListarLieneasAereasResponse }
+     * 
+     */
+    public ListarLieneasAereasResponse createListarLieneasAereasResponse() {
+        return new ListarLieneasAereasResponse();
     }
 
     /**
@@ -125,19 +145,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistroLineaArea }
+     * Create an instance of {@link RegistroLineaAerea }
      * 
      */
-    public RegistroLineaArea createRegistroLineaArea() {
-        return new RegistroLineaArea();
+    public RegistroLineaAerea createRegistroLineaAerea() {
+        return new RegistroLineaAerea();
     }
 
     /**
-     * Create an instance of {@link RegistroLineaAreaResponse }
+     * Create an instance of {@link RegistroLineaAereaResponse }
      * 
      */
-    public RegistroLineaAreaResponse createRegistroLineaAreaResponse() {
-        return new RegistroLineaAreaResponse();
+    public RegistroLineaAereaResponse createRegistroLineaAereaResponse() {
+        return new RegistroLineaAereaResponse();
+    }
+
+    /**
+     * Create an instance of {@link CambiarVuelo }
+     * 
+     */
+    public CambiarVuelo createCambiarVuelo() {
+        return new CambiarVuelo();
+    }
+
+    /**
+     * Create an instance of {@link CambiarVueloResponse }
+     * 
+     */
+    public CambiarVueloResponse createCambiarVueloResponse() {
+        return new CambiarVueloResponse();
     }
 
     /**
@@ -146,14 +182,6 @@ public class ObjectFactory {
      */
     public HorarioVuelo createHorarioVuelo() {
         return new HorarioVuelo();
-    }
-
-    /**
-     * Create an instance of {@link LineaArea }
-     * 
-     */
-    public LineaArea createLineaArea() {
-        return new LineaArea();
     }
 
     /**
@@ -235,29 +263,55 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CambiarVuelo }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarHorarios }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link CambiarVuelo }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link ListarHorarios }{@code >}
      */
-    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "CambiarVuelo")
-    public JAXBElement<CambiarVuelo> createCambiarVuelo(CambiarVuelo value) {
-        return new JAXBElement<CambiarVuelo>(_CambiarVuelo_QNAME, CambiarVuelo.class, null, value);
+    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "ListarHorarios")
+    public JAXBElement<ListarHorarios> createListarHorarios(ListarHorarios value) {
+        return new JAXBElement<ListarHorarios>(_ListarHorarios_QNAME, ListarHorarios.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CambiarVueloResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarHorariosResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link CambiarVueloResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link ListarHorariosResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "CambiarVueloResponse")
-    public JAXBElement<CambiarVueloResponse> createCambiarVueloResponse(CambiarVueloResponse value) {
-        return new JAXBElement<CambiarVueloResponse>(_CambiarVueloResponse_QNAME, CambiarVueloResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "ListarHorariosResponse")
+    public JAXBElement<ListarHorariosResponse> createListarHorariosResponse(ListarHorariosResponse value) {
+        return new JAXBElement<ListarHorariosResponse>(_ListarHorariosResponse_QNAME, ListarHorariosResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarLieneasAereas }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ListarLieneasAereas }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "ListarLieneasAereas")
+    public JAXBElement<ListarLieneasAereas> createListarLieneasAereas(ListarLieneasAereas value) {
+        return new JAXBElement<ListarLieneasAereas>(_ListarLieneasAereas_QNAME, ListarLieneasAereas.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarLieneasAereasResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ListarLieneasAereasResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "ListarLieneasAereasResponse")
+    public JAXBElement<ListarLieneasAereasResponse> createListarLieneasAereasResponse(ListarLieneasAereasResponse value) {
+        return new JAXBElement<ListarLieneasAereasResponse>(_ListarLieneasAereasResponse_QNAME, ListarLieneasAereasResponse.class, null, value);
     }
 
     /**
@@ -287,29 +341,55 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistroLineaArea }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistroLineaAerea }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistroLineaArea }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link RegistroLineaAerea }{@code >}
      */
-    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "RegistroLineaArea")
-    public JAXBElement<RegistroLineaArea> createRegistroLineaArea(RegistroLineaArea value) {
-        return new JAXBElement<RegistroLineaArea>(_RegistroLineaArea_QNAME, RegistroLineaArea.class, null, value);
+    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "RegistroLineaAerea")
+    public JAXBElement<RegistroLineaAerea> createRegistroLineaAerea(RegistroLineaAerea value) {
+        return new JAXBElement<RegistroLineaAerea>(_RegistroLineaAerea_QNAME, RegistroLineaAerea.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistroLineaAreaResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistroLineaAereaResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistroLineaAreaResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link RegistroLineaAereaResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "RegistroLineaAreaResponse")
-    public JAXBElement<RegistroLineaAreaResponse> createRegistroLineaAreaResponse(RegistroLineaAreaResponse value) {
-        return new JAXBElement<RegistroLineaAreaResponse>(_RegistroLineaAreaResponse_QNAME, RegistroLineaAreaResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "RegistroLineaAereaResponse")
+    public JAXBElement<RegistroLineaAereaResponse> createRegistroLineaAereaResponse(RegistroLineaAereaResponse value) {
+        return new JAXBElement<RegistroLineaAereaResponse>(_RegistroLineaAereaResponse_QNAME, RegistroLineaAereaResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CambiarVuelo }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link CambiarVuelo }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "cambiarVuelo")
+    public JAXBElement<CambiarVuelo> createCambiarVuelo(CambiarVuelo value) {
+        return new JAXBElement<CambiarVuelo>(_CambiarVuelo_QNAME, CambiarVuelo.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CambiarVueloResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link CambiarVueloResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://servicioLineaAreaWS/", name = "cambiarVueloResponse")
+    public JAXBElement<CambiarVueloResponse> createCambiarVueloResponse(CambiarVueloResponse value) {
+        return new JAXBElement<CambiarVueloResponse>(_CambiarVueloResponse_QNAME, CambiarVueloResponse.class, null, value);
     }
 
 }

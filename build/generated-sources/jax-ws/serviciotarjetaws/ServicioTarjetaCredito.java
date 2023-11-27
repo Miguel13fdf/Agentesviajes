@@ -28,24 +28,18 @@ public interface ServicioTarjetaCredito {
 
     /**
      * 
-     * @param monto
      * @param numero
-     * @param idCliente
      * @return
-     *     returns boolean
+     *     returns java.lang.Float
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "retirarDinero", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RetirarDinero")
-    @ResponseWrapper(localName = "retirarDineroResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RetirarDineroResponse")
-    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/retirarDineroRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/retirarDineroResponse")
-    public boolean retirarDinero(
+    @RequestWrapper(localName = "consultarSaldoDisponible", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ConsultarSaldoDisponible")
+    @ResponseWrapper(localName = "consultarSaldoDisponibleResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ConsultarSaldoDisponibleResponse")
+    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/consultarSaldoDisponibleRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/consultarSaldoDisponibleResponse")
+    public Float consultarSaldoDisponible(
         @WebParam(name = "numero", targetNamespace = "")
-        String numero,
-        @WebParam(name = "monto", targetNamespace = "")
-        float monto,
-        @WebParam(name = "idCliente", targetNamespace = "")
-        int idCliente);
+        String numero);
 
     /**
      * 
@@ -57,12 +51,12 @@ public interface ServicioTarjetaCredito {
      * @return
      *     returns boolean
      */
-    @WebMethod(operationName = "RegistroTarjeta")
+    @WebMethod(operationName = "ActualizarTarjeta")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "RegistroTarjeta", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RegistroTarjeta")
-    @ResponseWrapper(localName = "RegistroTarjetaResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RegistroTarjetaResponse")
-    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/RegistroTarjetaRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/RegistroTarjetaResponse")
-    public boolean registroTarjeta(
+    @RequestWrapper(localName = "ActualizarTarjeta", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ActualizarTarjeta")
+    @ResponseWrapper(localName = "ActualizarTarjetaResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ActualizarTarjetaResponse")
+    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaResponse")
+    public boolean actualizarTarjeta(
         @WebParam(name = "numero", targetNamespace = "")
         String numero,
         @WebParam(name = "titular", targetNamespace = "")
@@ -118,30 +112,18 @@ public interface ServicioTarjetaCredito {
 
     /**
      * 
-     * @param saldoDisponible
-     * @param numero
-     * @param codigoSeguridad
-     * @param fechaVencimiento
-     * @param titular
+     * @param arg0
      * @return
      *     returns boolean
      */
-    @WebMethod(operationName = "ActualizarTarjeta")
+    @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ActualizarTarjeta", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ActualizarTarjeta")
-    @ResponseWrapper(localName = "ActualizarTarjetaResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ActualizarTarjetaResponse")
-    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaResponse")
-    public boolean actualizarTarjeta(
-        @WebParam(name = "numero", targetNamespace = "")
-        String numero,
-        @WebParam(name = "titular", targetNamespace = "")
-        String titular,
-        @WebParam(name = "fechaVencimiento", targetNamespace = "")
-        String fechaVencimiento,
-        @WebParam(name = "codigoSeguridad", targetNamespace = "")
-        String codigoSeguridad,
-        @WebParam(name = "saldoDisponible", targetNamespace = "")
-        float saldoDisponible);
+    @RequestWrapper(localName = "validarTarjetaCredito", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ValidarTarjetaCredito")
+    @ResponseWrapper(localName = "validarTarjetaCreditoResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ValidarTarjetaCreditoResponse")
+    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/validarTarjetaCreditoRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/validarTarjetaCreditoResponse")
+    public boolean validarTarjetaCredito(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 
@@ -160,32 +142,53 @@ public interface ServicioTarjetaCredito {
 
     /**
      * 
+     * @param monto
      * @param numero
-     * @return
-     *     returns java.lang.Float
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "consultarSaldoDisponible", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ConsultarSaldoDisponible")
-    @ResponseWrapper(localName = "consultarSaldoDisponibleResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ConsultarSaldoDisponibleResponse")
-    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/consultarSaldoDisponibleRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/consultarSaldoDisponibleResponse")
-    public Float consultarSaldoDisponible(
-        @WebParam(name = "numero", targetNamespace = "")
-        String numero);
-
-    /**
-     * 
-     * @param arg0
+     * @param idCliente
      * @return
      *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "validarTarjetaCredito", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ValidarTarjetaCredito")
-    @ResponseWrapper(localName = "validarTarjetaCreditoResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ValidarTarjetaCreditoResponse")
-    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/validarTarjetaCreditoRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/validarTarjetaCreditoResponse")
-    public boolean validarTarjetaCredito(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+    @RequestWrapper(localName = "retirarDinero", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RetirarDinero")
+    @ResponseWrapper(localName = "retirarDineroResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RetirarDineroResponse")
+    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/retirarDineroRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/retirarDineroResponse")
+    public boolean retirarDinero(
+        @WebParam(name = "numero", targetNamespace = "")
+        String numero,
+        @WebParam(name = "monto", targetNamespace = "")
+        float monto,
+        @WebParam(name = "idCliente", targetNamespace = "")
+        int idCliente);
+
+    /**
+     * 
+     * @param saldoDisponible
+     * @param cliente
+     * @param numero
+     * @param codigoSeguridad
+     * @param fechaVencimiento
+     * @param titular
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "RegistroTarjeta")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "RegistroTarjeta", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RegistroTarjeta")
+    @ResponseWrapper(localName = "RegistroTarjetaResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RegistroTarjetaResponse")
+    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/RegistroTarjetaRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/RegistroTarjetaResponse")
+    public String registroTarjeta(
+        @WebParam(name = "numero", targetNamespace = "")
+        String numero,
+        @WebParam(name = "titular", targetNamespace = "")
+        String titular,
+        @WebParam(name = "fechaVencimiento", targetNamespace = "")
+        String fechaVencimiento,
+        @WebParam(name = "codigoSeguridad", targetNamespace = "")
+        String codigoSeguridad,
+        @WebParam(name = "saldoDisponible", targetNamespace = "")
+        float saldoDisponible,
+        @WebParam(name = "cliente", targetNamespace = "")
+        String cliente);
 
 }
