@@ -3,10 +3,10 @@
     <system systemId="http://localhost:8080/ProyectoSOAP/InicioSesion?Tester" uri="src/conf/xml-resources/web-service-references/InicioSesion_Tester/wsdl/localhost_8080/ProyectoSOAP/InicioSesion.tester"/>
     <system systemId="http://localhost:8080/ProyectoSOAP/ServicioHotel?WSDL" uri="src/conf/xml-resources/web-service-references/ServicioHotel/wsdl/localhost_8080/ProyectoSOAP/ServicioHotel.wsdl"/>
     <system systemId="http://localhost:8080/ProyectoSOAP/ServicioHotel?xsd=1" uri="src/conf/xml-resources/web-service-references/ServicioHotel/wsdl/localhost_8080/ProyectoSOAP/ServicioHotel.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/ProyectoSOAP/ServicioLineaArea?WSDL" uri="src/conf/xml-resources/web-service-references/ServicioLineaArea/wsdl/localhost_8080/ProyectoSOAP/ServicioLineaArea.wsdl"/>
-    <system systemId="http://localhost:8080/ProyectoSOAP/ServicioLineaArea?xsd=1" uri="src/conf/xml-resources/web-service-references/ServicioLineaArea/wsdl/localhost_8080/ProyectoSOAP/ServicioLineaArea.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/ProyectoSOAP/InicioSesion?WSDL" uri="src/conf/xml-resources/web-service-references/InicioSesion/wsdl/localhost_8080/ProyectoSOAP/InicioSesion.wsdl"/>
-    <system systemId="http://localhost:8080/ProyectoSOAP/InicioSesion?xsd=1" uri="src/conf/xml-resources/web-service-references/InicioSesion/wsdl/localhost_8080/ProyectoSOAP/InicioSesion.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/ProyectoSOAP/ServicioTarjetaCredito?WSDL" uri="src/conf/xml-resources/web-service-references/ServicioTarjetaCredito/wsdl/localhost_8080/ProyectoSOAP/ServicioTarjetaCredito.wsdl"/>
     <system systemId="http://localhost:8080/ProyectoSOAP/ServicioTarjetaCredito?xsd=1" uri="src/conf/xml-resources/web-service-references/ServicioTarjetaCredito/wsdl/localhost_8080/ProyectoSOAP/ServicioTarjetaCredito.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ProyectoSOAP/InicioSesion?WSDL" uri="src/conf/xml-resources/web-service-references/InicioSesion/wsdl/localhost_8080/ProyectoSOAP/InicioSesion.wsdl"/>
+    <system systemId="http://localhost:8080/ProyectoSOAP/InicioSesion?xsd=1" uri="src/conf/xml-resources/web-service-references/InicioSesion/wsdl/localhost_8080/ProyectoSOAP/InicioSesion.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ProyectoSOAP/ServicioLineaArea?WSDL" uri="src/conf/xml-resources/web-service-references/ServicioLineaArea/wsdl/localhost_8080/ProyectoSOAP/ServicioLineaArea.wsdl"/>
+    <system systemId="http://localhost:8080/ProyectoSOAP/ServicioLineaArea?xsd=1" uri="src/conf/xml-resources/web-service-references/ServicioLineaArea/wsdl/localhost_8080/ProyectoSOAP/ServicioLineaArea.xsd_1.xsd"/>
 </catalog>

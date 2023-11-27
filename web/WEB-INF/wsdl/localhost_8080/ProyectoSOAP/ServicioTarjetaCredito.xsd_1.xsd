@@ -16,9 +16,9 @@
 
 <xs:element name="obtenerHistorialTarjetaResponse" type="tns:obtenerHistorialTarjetaResponse"/>
 
-<xs:element name="realizarTransaccion" type="tns:realizarTransaccion"/>
+<xs:element name="realizartTransaccion" type="tns:realizartTransaccion"/>
 
-<xs:element name="realizarTransaccionResponse" type="tns:realizarTransaccionResponse"/>
+<xs:element name="realizartTransaccionResponse" type="tns:realizartTransaccionResponse"/>
 
 <xs:element name="retirarDinero" type="tns:retirarDinero"/>
 
@@ -46,9 +46,9 @@
 
 <xs:complexType name="retirarDinero">
 <xs:sequence>
-<xs:element name="numero" type="xs:string" minOccurs="0"/>
+<xs:element name="numeroTarjeta" type="xs:string" minOccurs="0"/>
+<xs:element name="cedulaCliente" type="xs:string" minOccurs="0"/>
 <xs:element name="monto" type="xs:float"/>
-<xs:element name="idCliente" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -58,16 +58,16 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="realizarTransaccion">
+<xs:complexType name="realizartTransaccion">
 <xs:sequence>
 <xs:element name="numeroTarjeta" type="xs:string" minOccurs="0"/>
-<xs:element name="monto" type="xs:double"/>
+<xs:element name="monto" type="xs:float"/>
 <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
-<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fecha" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="realizarTransaccionResponse">
+<xs:complexType name="realizartTransaccionResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -98,7 +98,7 @@
 
 <xs:complexType name="ActualizarTarjetaResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

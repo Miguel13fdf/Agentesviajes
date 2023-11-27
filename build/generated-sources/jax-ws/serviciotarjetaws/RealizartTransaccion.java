@@ -3,25 +3,23 @@ package serviciotarjetaws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Clase Java para realizarTransaccion complex type.
+ * <p>Clase Java para realizartTransaccion complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="realizarTransaccion"&gt;
+ * &lt;complexType name="realizartTransaccion"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="numeroTarjeta" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="monto" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="monto" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
  *         &lt;element name="descripcion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="fecha" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="fecha" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -31,19 +29,18 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "realizarTransaccion", propOrder = {
+@XmlType(name = "realizartTransaccion", propOrder = {
     "numeroTarjeta",
     "monto",
     "descripcion",
     "fecha"
 })
-public class RealizarTransaccion {
+public class RealizartTransaccion {
 
     protected String numeroTarjeta;
-    protected double monto;
+    protected float monto;
     protected String descripcion;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar fecha;
+    protected String fecha;
 
     /**
      * Obtiene el valor de la propiedad numeroTarjeta.
@@ -73,7 +70,7 @@ public class RealizarTransaccion {
      * Obtiene el valor de la propiedad monto.
      * 
      */
-    public double getMonto() {
+    public float getMonto() {
         return monto;
     }
 
@@ -81,7 +78,7 @@ public class RealizarTransaccion {
      * Define el valor de la propiedad monto.
      * 
      */
-    public void setMonto(double value) {
+    public void setMonto(float value) {
         this.monto = value;
     }
 
@@ -114,10 +111,10 @@ public class RealizarTransaccion {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
@@ -126,10 +123,10 @@ public class RealizarTransaccion {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setFecha(XMLGregorianCalendar value) {
+    public void setFecha(String value) {
         this.fecha = value;
     }
 

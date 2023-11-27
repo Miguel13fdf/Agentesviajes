@@ -7,7 +7,6 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.Action;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
@@ -49,14 +48,14 @@ public interface ServicioTarjetaCredito {
      * @param fechaVencimiento
      * @param titular
      * @return
-     *     returns boolean
+     *     returns java.lang.String
      */
     @WebMethod(operationName = "ActualizarTarjeta")
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "ActualizarTarjeta", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ActualizarTarjeta")
     @ResponseWrapper(localName = "ActualizarTarjetaResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.ActualizarTarjetaResponse")
     @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaResponse")
-    public boolean actualizarTarjeta(
+    public String actualizarTarjeta(
         @WebParam(name = "numero", targetNamespace = "")
         String numero,
         @WebParam(name = "titular", targetNamespace = "")
@@ -79,18 +78,18 @@ public interface ServicioTarjetaCredito {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "realizarTransaccion", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RealizarTransaccion")
-    @ResponseWrapper(localName = "realizarTransaccionResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RealizarTransaccionResponse")
-    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/realizarTransaccionRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/realizarTransaccionResponse")
-    public boolean realizarTransaccion(
+    @RequestWrapper(localName = "realizartTransaccion", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RealizartTransaccion")
+    @ResponseWrapper(localName = "realizartTransaccionResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RealizartTransaccionResponse")
+    @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/realizartTransaccionRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/realizartTransaccionResponse")
+    public boolean realizartTransaccion(
         @WebParam(name = "numeroTarjeta", targetNamespace = "")
         String numeroTarjeta,
         @WebParam(name = "monto", targetNamespace = "")
-        double monto,
+        float monto,
         @WebParam(name = "descripcion", targetNamespace = "")
         String descripcion,
         @WebParam(name = "fecha", targetNamespace = "")
-        XMLGregorianCalendar fecha);
+        String fecha);
 
     /**
      * 
@@ -143,8 +142,8 @@ public interface ServicioTarjetaCredito {
     /**
      * 
      * @param monto
-     * @param numero
-     * @param idCliente
+     * @param numeroTarjeta
+     * @param cedulaCliente
      * @return
      *     returns boolean
      */
@@ -154,12 +153,12 @@ public interface ServicioTarjetaCredito {
     @ResponseWrapper(localName = "retirarDineroResponse", targetNamespace = "http://servicioTarjetaWS/", className = "serviciotarjetaws.RetirarDineroResponse")
     @Action(input = "http://servicioTarjetaWS/ServicioTarjetaCredito/retirarDineroRequest", output = "http://servicioTarjetaWS/ServicioTarjetaCredito/retirarDineroResponse")
     public boolean retirarDinero(
-        @WebParam(name = "numero", targetNamespace = "")
-        String numero,
+        @WebParam(name = "numeroTarjeta", targetNamespace = "")
+        String numeroTarjeta,
+        @WebParam(name = "cedulaCliente", targetNamespace = "")
+        String cedulaCliente,
         @WebParam(name = "monto", targetNamespace = "")
-        float monto,
-        @WebParam(name = "idCliente", targetNamespace = "")
-        int idCliente);
+        float monto);
 
     /**
      * 

@@ -16,11 +16,11 @@
 <message name="ActualizarTarjetaResponse">
 <part name="parameters" element="tns:ActualizarTarjetaResponse"/>
 </message>
-<message name="realizarTransaccion">
-<part name="parameters" element="tns:realizarTransaccion"/>
+<message name="realizartTransaccion">
+<part name="parameters" element="tns:realizartTransaccion"/>
 </message>
-<message name="realizarTransaccionResponse">
-<part name="parameters" element="tns:realizarTransaccionResponse"/>
+<message name="realizartTransaccionResponse">
+<part name="parameters" element="tns:realizartTransaccionResponse"/>
 </message>
 <message name="validarFechaVencimiento">
 <part name="parameters" element="tns:validarFechaVencimiento"/>
@@ -61,9 +61,9 @@
 <input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaRequest" message="tns:ActualizarTarjeta"/>
 <output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/ActualizarTarjetaResponse" message="tns:ActualizarTarjetaResponse"/>
 </operation>
-<operation name="realizarTransaccion">
-<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/realizarTransaccionRequest" message="tns:realizarTransaccion"/>
-<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/realizarTransaccionResponse" message="tns:realizarTransaccionResponse"/>
+<operation name="realizartTransaccion">
+<input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/realizartTransaccionRequest" message="tns:realizartTransaccion"/>
+<output wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/realizartTransaccionResponse" message="tns:realizartTransaccionResponse"/>
 </operation>
 <operation name="validarFechaVencimiento">
 <input wsam:Action="http://servicioTarjetaWS/ServicioTarjetaCredito/validarFechaVencimientoRequest" message="tns:validarFechaVencimiento"/>
@@ -106,7 +106,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="realizarTransaccion">
+<operation name="realizartTransaccion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
