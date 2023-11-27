@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package intermediario;
 
 import java.security.MessageDigest;
@@ -20,7 +15,8 @@ import javax.swing.JOptionPane;
  * @author USUARIO
  */
 public class AES_ENCRYPTION {
-     private String LLAVE = "ISTAAESEncrypt";
+
+    private String LLAVE = "ISTAAESEncrypt";
 
     // Clave de encriptación / desencriptación
     public SecretKeySpec crearClave(String llave) {

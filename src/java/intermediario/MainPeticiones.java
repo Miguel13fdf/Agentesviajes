@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package intermediario;
 
 /**
@@ -20,13 +15,11 @@ public class MainPeticiones {
         // Configuración para mostrar mensajes de nivel INFO en la consola
         Logger.getLogger("").setLevel(Level.INFO);
 
-        
         Peticiones peticiones = new Peticiones();
 
 //        // Realizar una reserva exitosa
 //        String resultadoReservaExitosa = peticiones.realizarReserva("Juan Pérez", "2023-12-01", "2023-12-05", 1);
 //        System.out.println("Resultado Reserva Exitosa: " + resultadoReservaExitosa);
-
 //        // Aqui para probar que pasa en una reserva con datos incorrectos
         String resultadoReservaInvalida = peticiones.realizarReserva(null, "", "2023-12-05", 0);
         System.out.println("Resultado Reserva Inválida: " + resultadoReservaInvalida);
@@ -36,10 +29,9 @@ public class MainPeticiones {
         // en tu proyecto o proporcionar la ruta completa.
         LeerArchivoDeRegistro();
 
-      
     }
 
-     private static void LeerArchivoDeRegistro() {
+    private static void LeerArchivoDeRegistro() {
         // Debes ajustar la ruta del archivo según donde se haya creado
         // en tu proyecto o proporcionar la ruta completa.
         String rutaArchivo = "actividad.log";

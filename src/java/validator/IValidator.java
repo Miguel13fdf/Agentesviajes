@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package validator;
 
 import java.text.ParseException;
@@ -15,6 +11,7 @@ import java.util.Date;
  */
 public interface IValidator {
 
+    //  Comprueba si se encuentra dentro de rangos de fechas válidos.
     public default boolean validateDate(String dateString) {
         if (dateString == null || dateString.isEmpty()) {
             return false;
@@ -37,6 +34,7 @@ public interface IValidator {
         }
     }
 
+    // Valida un string de fecha para la fecha de vencimiento de una tarjeta de crédito.
     public default boolean validateDateRangeCreditCard(String date) {
         if (validateDate(date)) {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -61,14 +59,17 @@ public interface IValidator {
         return false; // Fecha no válida
     }
 
+    // Valida un valor para asegurar que sea mayor que 0 y no NaN.
     public default boolean validateCost(Double costo) {
         return costo > 0 && !costo.isNaN();
     }
 
+    // Permitir solo caracteres alfabéticos y espacios, con una longitud mínima de 2.
     public default boolean validateName(String name) {
         return name.matches("^[a-zA-ZáéíóúñÑ ]+$") && name.length() >= 2;
     }
 
+    // Poner en mayúscula la primera letra de cada palabra.
     public default String correctName(String name) {
         if (name.contains(" ")) {
             String[] mayus = name.toLowerCase().split(" ");
@@ -84,11 +85,13 @@ public interface IValidator {
             }
         } else {
             String charChange = String.valueOf(name.charAt(0));
-            name.replaceFirst(charChange, charChange.toUpperCase());
+
+            name = name.replaceFirst(charChange, charChange.toUpperCase());
         }
         return name.trim();
     }
 
+    // Validar un número de tarjeta de crédito asegurándose de que consta de 16 caracteres numéricos.
     //public boolean validateHour(String hour);
     public default boolean validateCardNumber(String cardNumber) {
         cardNumber = cardNumber.replaceAll("\\s+", "");
@@ -98,6 +101,7 @@ public interface IValidator {
         return cardNumber.matches(regex) && cardNumber.length() == 16;
     }
 
+    // Validar el saldo de una cuenta para asegurarse de que es un valor positivo finito.
     public default boolean validateAccountBalance(Double balance) {
         return !balance.isInfinite() && balance > 0;
     }
@@ -149,5 +153,9 @@ public interface IValidator {
             System.out.println(e.getMessage());
             return false;
         }
+    }
+    
+    public default boolean validateNumberOfRooms(int numberOfRooms) {
+        return numberOfRooms > 0;
     }
 }
