@@ -7,18 +7,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para retirarDinero complex type.
+ * <p>Java class for retirarDinero complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="retirarDinero"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="numeroTarjeta" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="cedulaCliente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="numero" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="monto" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="idCliente" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,66 +29,42 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "retirarDinero", propOrder = {
-    "numeroTarjeta",
-    "cedulaCliente",
-    "monto"
+    "numero",
+    "monto",
+    "idCliente"
 })
 public class RetirarDinero {
 
-    protected String numeroTarjeta;
-    protected String cedulaCliente;
+    protected String numero;
     protected float monto;
+    protected int idCliente;
 
     /**
-     * Obtiene el valor de la propiedad numeroTarjeta.
+     * Gets the value of the numero property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getNumeroTarjeta() {
-        return numeroTarjeta;
+    public String getNumero() {
+        return numero;
     }
 
     /**
-     * Define el valor de la propiedad numeroTarjeta.
+     * Sets the value of the numero property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setNumeroTarjeta(String value) {
-        this.numeroTarjeta = value;
+    public void setNumero(String value) {
+        this.numero = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad cedulaCliente.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCedulaCliente() {
-        return cedulaCliente;
-    }
-
-    /**
-     * Define el valor de la propiedad cedulaCliente.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCedulaCliente(String value) {
-        this.cedulaCliente = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad monto.
+     * Gets the value of the monto property.
      * 
      */
     public float getMonto() {
@@ -96,11 +72,27 @@ public class RetirarDinero {
     }
 
     /**
-     * Define el valor de la propiedad monto.
+     * Sets the value of the monto property.
      * 
      */
     public void setMonto(float value) {
         this.monto = value;
+    }
+
+    /**
+     * Gets the value of the idCliente property.
+     * 
+     */
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    /**
+     * Sets the value of the idCliente property.
+     * 
+     */
+    public void setIdCliente(int value) {
+        this.idCliente = value;
     }
 
 }

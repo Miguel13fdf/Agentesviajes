@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para consultarSaldoDisponible complex type.
+ * <p>Java class for consultarSaldoDisponible complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="consultarSaldoDisponible"&gt;
@@ -34,7 +34,7 @@ public class ConsultarSaldoDisponible {
     protected String numero;
 
     /**
-     * Obtiene el valor de la propiedad numero.
+     * Gets the value of the numero property.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class ConsultarSaldoDisponible {
     }
 
     /**
-     * Define el valor de la propiedad numero.
+     * Sets the value of the numero property.
      * 
      * @param value
      *     allowed object is

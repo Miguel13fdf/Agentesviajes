@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://servicioTarjetaWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicioTarjetaWS/">
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicioTarjetaWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicioTarjetaWS/">
 
 <xs:element name="ActualizarTarjeta" type="tns:ActualizarTarjeta"/>
 
@@ -16,9 +16,9 @@
 
 <xs:element name="obtenerHistorialTarjetaResponse" type="tns:obtenerHistorialTarjetaResponse"/>
 
-<xs:element name="realizartTransaccion" type="tns:realizartTransaccion"/>
+<xs:element name="realizarTransaccion" type="tns:realizarTransaccion"/>
 
-<xs:element name="realizartTransaccionResponse" type="tns:realizartTransaccionResponse"/>
+<xs:element name="realizarTransaccionResponse" type="tns:realizarTransaccionResponse"/>
 
 <xs:element name="retirarDinero" type="tns:retirarDinero"/>
 
@@ -46,9 +46,9 @@
 
 <xs:complexType name="retirarDinero">
 <xs:sequence>
-<xs:element name="numeroTarjeta" type="xs:string" minOccurs="0"/>
-<xs:element name="cedulaCliente" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
 <xs:element name="monto" type="xs:float"/>
+<xs:element name="idCliente" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -58,16 +58,16 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="realizartTransaccion">
+<xs:complexType name="realizarTransaccion">
 <xs:sequence>
 <xs:element name="numeroTarjeta" type="xs:string" minOccurs="0"/>
-<xs:element name="monto" type="xs:float"/>
+<xs:element name="monto" type="xs:double"/>
 <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
-<xs:element name="fecha" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="realizartTransaccionResponse">
+<xs:complexType name="realizarTransaccionResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
@@ -86,6 +86,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="validarTarjetaCredito">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validarTarjetaCreditoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="ActualizarTarjeta">
 <xs:sequence>
 <xs:element name="numero" type="xs:string" minOccurs="0"/>
@@ -97,18 +109,6 @@
 </xs:complexType>
 
 <xs:complexType name="ActualizarTarjetaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="validarTarjetaCredito">
-<xs:sequence>
-<xs:element name="arg0" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="validarTarjetaCreditoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>

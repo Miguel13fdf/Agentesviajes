@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para cambiarVuelo complex type.
+ * <p>Java class for cambiarVuelo complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="cambiarVuelo"&gt;
@@ -43,7 +43,7 @@ public class CambiarVuelo {
     protected String nuevaHoraLlegada;
 
     /**
-     * Obtiene el valor de la propiedad numeroVuelo.
+     * Gets the value of the numeroVuelo property.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class CambiarVuelo {
     }
 
     /**
-     * Define el valor de la propiedad numeroVuelo.
+     * Sets the value of the numeroVuelo property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class CambiarVuelo {
     }
 
     /**
-     * Obtiene el valor de la propiedad nuevaFecha.
+     * Gets the value of the nuevaFecha property.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class CambiarVuelo {
     }
 
     /**
-     * Define el valor de la propiedad nuevaFecha.
+     * Sets the value of the nuevaFecha property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class CambiarVuelo {
     }
 
     /**
-     * Obtiene el valor de la propiedad nuevaHoraSalida.
+     * Gets the value of the nuevaHoraSalida property.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class CambiarVuelo {
     }
 
     /**
-     * Define el valor de la propiedad nuevaHoraSalida.
+     * Sets the value of the nuevaHoraSalida property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class CambiarVuelo {
     }
 
     /**
-     * Obtiene el valor de la propiedad nuevaHoraLlegada.
+     * Gets the value of the nuevaHoraLlegada property.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class CambiarVuelo {
     }
 
     /**
-     * Define el valor de la propiedad nuevaHoraLlegada.
+     * Sets the value of the nuevaHoraLlegada property.
      * 
      * @param value
      *     allowed object is

@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para RegistroTarjeta complex type.
+ * <p>Java class for RegistroTarjeta complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="RegistroTarjeta"&gt;
@@ -49,7 +49,7 @@ public class RegistroTarjeta {
     protected String cliente;
 
     /**
-     * Obtiene el valor de la propiedad numero.
+     * Gets the value of the numero property.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Define el valor de la propiedad numero.
+     * Sets the value of the numero property.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Obtiene el valor de la propiedad titular.
+     * Gets the value of the titular property.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Define el valor de la propiedad titular.
+     * Sets the value of the titular property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaVencimiento.
+     * Gets the value of the fechaVencimiento property.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Define el valor de la propiedad fechaVencimiento.
+     * Sets the value of the fechaVencimiento property.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Obtiene el valor de la propiedad codigoSeguridad.
+     * Gets the value of the codigoSeguridad property.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Define el valor de la propiedad codigoSeguridad.
+     * Sets the value of the codigoSeguridad property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +145,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Obtiene el valor de la propiedad saldoDisponible.
+     * Gets the value of the saldoDisponible property.
      * 
      */
     public float getSaldoDisponible() {
@@ -153,7 +153,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Define el valor de la propiedad saldoDisponible.
+     * Sets the value of the saldoDisponible property.
      * 
      */
     public void setSaldoDisponible(float value) {
@@ -161,7 +161,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Obtiene el valor de la propiedad cliente.
+     * Gets the value of the cliente property.
      * 
      * @return
      *     possible object is
@@ -173,7 +173,7 @@ public class RegistroTarjeta {
     }
 
     /**
-     * Define el valor de la propiedad cliente.
+     * Sets the value of the cliente property.
      * 
      * @param value
      *     allowed object is

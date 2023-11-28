@@ -1,6 +1,8 @@
 package intermediario;
 
 import java.io.IOException;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import java.util.logging.FileHandler;
@@ -11,6 +13,9 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.swing.JOptionPane;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import serviciohotelws.ServicioHotel;
 import serviciohotelws.ServicioHotel_Service;
 
@@ -209,7 +214,7 @@ public class Peticiones implements IValidator {
     public String registroLineaAerea(
             @WebParam(name = "id") int idLinea,
             @WebParam(name = "nombre") String nombre,
-            @WebParam(name = "idHorarios") List<String> idHorarios) {
+            @WebParam(name = "idHorarios") String idHorarios) {
         return cliente2.registroLineaAerea(idLinea, nombre, idHorarios);
     }
 
@@ -260,25 +265,21 @@ public class Peticiones implements IValidator {
     }
 
     @WebMethod(operationName = "Registro")
-    public String Registro(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "cedula") String cedula, @WebParam(name = "usuaio") String usuaio, @WebParam(name = "contrasena") String contrasena, @WebParam(name = "contrasena1") String contrasena1) {
+    public String Registro(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "cedula") String cedula, @WebParam(name = "usuaio") String usuaio, @WebParam(name = "contrasena") String contrasena, @WebParam(name = "contrasena1") String contrasena1, @WebParam(name = "pregunta") String pregunta, @WebParam(name = "respuesta") String respuesta) {
 
-        // VALIDACIONES
         if (!validateName(nombre)) {
-            JOptionPane.showMessageDialog(null, "Nombre no válido.", "Error", JOptionPane.WARNING_MESSAGE);
-            return "";
+            return "Nombre no válido.";
         }
 
         if (!validateName(apellido)) {
-            JOptionPane.showMessageDialog(null, "Apellido no válido.", "Error", JOptionPane.WARNING_MESSAGE);
-            return "";
+            return "Apellido no válido.";
         }
 
         if (!validateIdentificationCard(cedula)) {
-            JOptionPane.showMessageDialog(null, "Cédula no válida.", "Error", JOptionPane.WARNING_MESSAGE);
-            return "";
+            return "Cédula no válida.";
         }
 
-        return cliente3.registro(nombre, apellido, cedula, usuaio, contrasena, contrasena1);
+        return cliente3.registro(nombre, apellido, cedula, usuaio, contrasena, contrasena1, pregunta, respuesta);
     }
 
     ServicioTarjetaCredito_Service servicioitarjetacredito = new ServicioTarjetaCredito_Service();
@@ -317,26 +318,12 @@ public class Peticiones implements IValidator {
     }
 
     @WebMethod(operationName = "ActualizarTarjeta")
-    public String ActualizarTarjeta(@WebParam(name = "numero") String numero,
+    public boolean ActualizarTarjeta(@WebParam(name = "numero") String numero,
             @WebParam(name = "titular") String titular,
             @WebParam(name = "fechaVencimiento") String fechaVencimiento,
             @WebParam(name = "codigoSeguridad") String codigoSeguridad,
             @WebParam(name = "saldoDisponible") float saldoDisponible) {
 
-        if (!validateCardNumber(numero)) {
-            JOptionPane.showMessageDialog(null, "Número de tarjeta no válido.", "Error", JOptionPane.WARNING_MESSAGE);
-            return "";
-        }
-
-        if (!validateName(titular) || !validateDate(fechaVencimiento)) {
-            JOptionPane.showMessageDialog(null, "Datos obligatorios no válidos.", "Error", JOptionPane.WARNING_MESSAGE);
-            return "";
-        }
-
-        if (!validateCost((double) saldoDisponible)) {
-            JOptionPane.showMessageDialog(null, "Saldo no válido.", "Error", JOptionPane.WARNING_MESSAGE);
-            return "";
-        }
         return cliente4.actualizarTarjeta(numero, titular, fechaVencimiento, codigoSeguridad, saldoDisponible);
     }
 
@@ -353,11 +340,19 @@ public class Peticiones implements IValidator {
     @WebMethod(operationName = "realizartTransaccion")
     public boolean realizarTransaccion(
             @WebParam(name = "numeroTarjeta") String numeroTarjeta,
-            @WebParam(name = "monto") float monto,
+            @WebParam(name = "monto") double monto,
             @WebParam(name = "descripcion") String descripcion,
-            @WebParam(name = "fecha") String fecha) {
+            @WebParam(name = "fecha") Date fecha) {
+        try {
+            GregorianCalendar grego = new GregorianCalendar();
+            grego.setTime(fecha);
+            XMLGregorianCalendar xmlgrego = DatatypeFactory.newInstance().newXMLGregorianCalendar(grego);
+            return cliente4.realizarTransaccion(numeroTarjeta, monto, descripcion, xmlgrego);
+        } catch (DatatypeConfigurationException e) {
+            e.printStackTrace();
+            return false;
+        }
 
-        return cliente4.realizartTransaccion(numeroTarjeta, monto, descripcion, fecha);
     }
 
     @WebMethod(operationName = "obtenerHistorialTarjeta")
@@ -370,9 +365,9 @@ public class Peticiones implements IValidator {
     //METODO PARA RETIRAR DINERO
     @WebMethod(operationName = "retirarDinero")
     public boolean retirarDinero(@WebParam(name = "numeroTarjeta") String numeroTarjeta,
-            @WebParam(name = "cedulaCliente") String cedulaCliente,
+            @WebParam(name = "idcliente") int idcliente,
             @WebParam(name = "monto") float monto) {
 
-        return cliente4.retirarDinero(numeroTarjeta, cedulaCliente, monto);
+        return cliente4.retirarDinero(numeroTarjeta, monto, idcliente);
     }
 }

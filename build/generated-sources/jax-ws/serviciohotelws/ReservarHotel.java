@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para reservarHotel complex type.
+ * <p>Java class for reservarHotel complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="reservarHotel"&gt;
@@ -43,7 +43,7 @@ public class ReservarHotel {
     protected Integer numeroHabitaciones;
 
     /**
-     * Obtiene el valor de la propiedad nombreCliente.
+     * Gets the value of the nombreCliente property.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class ReservarHotel {
     }
 
     /**
-     * Define el valor de la propiedad nombreCliente.
+     * Sets the value of the nombreCliente property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class ReservarHotel {
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaInicio.
+     * Gets the value of the fechaInicio property.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class ReservarHotel {
     }
 
     /**
-     * Define el valor de la propiedad fechaInicio.
+     * Sets the value of the fechaInicio property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class ReservarHotel {
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaFin.
+     * Gets the value of the fechaFin property.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class ReservarHotel {
     }
 
     /**
-     * Define el valor de la propiedad fechaFin.
+     * Sets the value of the fechaFin property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class ReservarHotel {
     }
 
     /**
-     * Obtiene el valor de la propiedad numeroHabitaciones.
+     * Gets the value of the numeroHabitaciones property.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class ReservarHotel {
     }
 
     /**
-     * Define el valor de la propiedad numeroHabitaciones.
+     * Sets the value of the numeroHabitaciones property.
      * 
      * @param value
      *     allowed object is

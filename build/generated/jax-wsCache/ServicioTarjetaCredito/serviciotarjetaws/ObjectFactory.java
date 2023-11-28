@@ -32,8 +32,8 @@ public class ObjectFactory {
     private final static QName _ConsultarSaldoDisponibleResponse_QNAME = new QName("http://servicioTarjetaWS/", "consultarSaldoDisponibleResponse");
     private final static QName _ObtenerHistorialTarjeta_QNAME = new QName("http://servicioTarjetaWS/", "obtenerHistorialTarjeta");
     private final static QName _ObtenerHistorialTarjetaResponse_QNAME = new QName("http://servicioTarjetaWS/", "obtenerHistorialTarjetaResponse");
-    private final static QName _RealizartTransaccion_QNAME = new QName("http://servicioTarjetaWS/", "realizartTransaccion");
-    private final static QName _RealizartTransaccionResponse_QNAME = new QName("http://servicioTarjetaWS/", "realizartTransaccionResponse");
+    private final static QName _RealizarTransaccion_QNAME = new QName("http://servicioTarjetaWS/", "realizarTransaccion");
+    private final static QName _RealizarTransaccionResponse_QNAME = new QName("http://servicioTarjetaWS/", "realizarTransaccionResponse");
     private final static QName _RetirarDinero_QNAME = new QName("http://servicioTarjetaWS/", "retirarDinero");
     private final static QName _RetirarDineroResponse_QNAME = new QName("http://servicioTarjetaWS/", "retirarDineroResponse");
     private final static QName _ValidarFechaVencimiento_QNAME = new QName("http://servicioTarjetaWS/", "validarFechaVencimiento");
@@ -113,19 +113,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RealizartTransaccion }
+     * Create an instance of {@link RealizarTransaccion }
      * 
      */
-    public RealizartTransaccion createRealizartTransaccion() {
-        return new RealizartTransaccion();
+    public RealizarTransaccion createRealizarTransaccion() {
+        return new RealizarTransaccion();
     }
 
     /**
-     * Create an instance of {@link RealizartTransaccionResponse }
+     * Create an instance of {@link RealizarTransaccionResponse }
      * 
      */
-    public RealizartTransaccionResponse createRealizartTransaccionResponse() {
-        return new RealizartTransaccionResponse();
+    public RealizarTransaccionResponse createRealizarTransaccionResponse() {
+        return new RealizarTransaccionResponse();
     }
 
     /**
@@ -289,29 +289,29 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RealizartTransaccion }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RealizarTransaccion }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RealizartTransaccion }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link RealizarTransaccion }{@code >}
      */
-    @XmlElementDecl(namespace = "http://servicioTarjetaWS/", name = "realizartTransaccion")
-    public JAXBElement<RealizartTransaccion> createRealizartTransaccion(RealizartTransaccion value) {
-        return new JAXBElement<RealizartTransaccion>(_RealizartTransaccion_QNAME, RealizartTransaccion.class, null, value);
+    @XmlElementDecl(namespace = "http://servicioTarjetaWS/", name = "realizarTransaccion")
+    public JAXBElement<RealizarTransaccion> createRealizarTransaccion(RealizarTransaccion value) {
+        return new JAXBElement<RealizarTransaccion>(_RealizarTransaccion_QNAME, RealizarTransaccion.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RealizartTransaccionResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RealizarTransaccionResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RealizartTransaccionResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link RealizarTransaccionResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://servicioTarjetaWS/", name = "realizartTransaccionResponse")
-    public JAXBElement<RealizartTransaccionResponse> createRealizartTransaccionResponse(RealizartTransaccionResponse value) {
-        return new JAXBElement<RealizartTransaccionResponse>(_RealizartTransaccionResponse_QNAME, RealizartTransaccionResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://servicioTarjetaWS/", name = "realizarTransaccionResponse")
+    public JAXBElement<RealizarTransaccionResponse> createRealizarTransaccionResponse(RealizarTransaccionResponse value) {
+        return new JAXBElement<RealizarTransaccionResponse>(_RealizarTransaccionResponse_QNAME, RealizarTransaccionResponse.class, null, value);
     }
 
     /**

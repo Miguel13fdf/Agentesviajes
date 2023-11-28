@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Registro complex type.
+ * <p>Java class for Registro complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Registro"&gt;
@@ -22,6 +22,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="usuaio" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="contrasena" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="contrasena1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="pregunta" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="respuesta" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,7 +39,9 @@ import javax.xml.bind.annotation.XmlType;
     "cedula",
     "usuaio",
     "contrasena",
-    "contrasena1"
+    "contrasena1",
+    "pregunta",
+    "respuesta"
 })
 public class Registro {
 
@@ -47,9 +51,11 @@ public class Registro {
     protected String usuaio;
     protected String contrasena;
     protected String contrasena1;
+    protected String pregunta;
+    protected String respuesta;
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -61,7 +67,7 @@ public class Registro {
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +79,7 @@ public class Registro {
     }
 
     /**
-     * Obtiene el valor de la propiedad apellido.
+     * Gets the value of the apellido property.
      * 
      * @return
      *     possible object is
@@ -85,7 +91,7 @@ public class Registro {
     }
 
     /**
-     * Define el valor de la propiedad apellido.
+     * Sets the value of the apellido property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +103,7 @@ public class Registro {
     }
 
     /**
-     * Obtiene el valor de la propiedad cedula.
+     * Gets the value of the cedula property.
      * 
      * @return
      *     possible object is
@@ -109,7 +115,7 @@ public class Registro {
     }
 
     /**
-     * Define el valor de la propiedad cedula.
+     * Sets the value of the cedula property.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +127,7 @@ public class Registro {
     }
 
     /**
-     * Obtiene el valor de la propiedad usuaio.
+     * Gets the value of the usuaio property.
      * 
      * @return
      *     possible object is
@@ -133,7 +139,7 @@ public class Registro {
     }
 
     /**
-     * Define el valor de la propiedad usuaio.
+     * Sets the value of the usuaio property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +151,7 @@ public class Registro {
     }
 
     /**
-     * Obtiene el valor de la propiedad contrasena.
+     * Gets the value of the contrasena property.
      * 
      * @return
      *     possible object is
@@ -157,7 +163,7 @@ public class Registro {
     }
 
     /**
-     * Define el valor de la propiedad contrasena.
+     * Sets the value of the contrasena property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +175,7 @@ public class Registro {
     }
 
     /**
-     * Obtiene el valor de la propiedad contrasena1.
+     * Gets the value of the contrasena1 property.
      * 
      * @return
      *     possible object is
@@ -181,7 +187,7 @@ public class Registro {
     }
 
     /**
-     * Define el valor de la propiedad contrasena1.
+     * Sets the value of the contrasena1 property.
      * 
      * @param value
      *     allowed object is
@@ -190,6 +196,54 @@ public class Registro {
      */
     public void setContrasena1(String value) {
         this.contrasena1 = value;
+    }
+
+    /**
+     * Gets the value of the pregunta property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPregunta() {
+        return pregunta;
+    }
+
+    /**
+     * Sets the value of the pregunta property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPregunta(String value) {
+        this.pregunta = value;
+    }
+
+    /**
+     * Gets the value of the respuesta property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRespuesta() {
+        return respuesta;
+    }
+
+    /**
+     * Sets the value of the respuesta property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRespuesta(String value) {
+        this.respuesta = value;
     }
 
 }

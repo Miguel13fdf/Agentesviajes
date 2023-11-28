@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para RegistroHorario complex type.
+ * <p>Java class for RegistroHorario complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="RegistroHorario"&gt;
@@ -43,7 +43,7 @@ public class RegistroHorario {
     protected String horaLLegada;
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class RegistroHorario {
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class RegistroHorario {
     }
 
     /**
-     * Obtiene el valor de la propiedad fecha.
+     * Gets the value of the fecha property.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class RegistroHorario {
     }
 
     /**
-     * Define el valor de la propiedad fecha.
+     * Sets the value of the fecha property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class RegistroHorario {
     }
 
     /**
-     * Obtiene el valor de la propiedad horaSalida.
+     * Gets the value of the horaSalida property.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class RegistroHorario {
     }
 
     /**
-     * Define el valor de la propiedad horaSalida.
+     * Sets the value of the horaSalida property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class RegistroHorario {
     }
 
     /**
-     * Obtiene el valor de la propiedad horaLLegada.
+     * Gets the value of the horaLLegada property.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class RegistroHorario {
     }
 
     /**
-     * Define el valor de la propiedad horaLLegada.
+     * Sets the value of the horaLLegada property.
      * 
      * @param value
      *     allowed object is

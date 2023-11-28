@@ -43,42 +43,10 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-ServicioHotel" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioHotel"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioHotel" destdir="${build.generated.dir}/jax-wsCache/ServicioHotel" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioHotel/wsdl/localhost_8080/ProyectoSOAP/ServicioHotel.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProyectoSOAP/ServicioHotel?WSDL" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioHotel/wsdl/localhost_8080/ProyectoSOAP/ServicioHotel.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/ServicioHotel"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/ServicioHotel">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-ServicioHotel" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/serviciohotelws"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/ServicioHotel"/>
-    </target>
-    <target name="wsimport-client-ServicioLineaArea" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioLineaArea"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioLineaArea" destdir="${build.generated.dir}/jax-wsCache/ServicioLineaArea" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioLineaArea/wsdl/localhost_8080/ProyectoSOAP/ServicioLineaArea.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProyectoSOAP/ServicioLineaArea?WSDL" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioLineaArea/wsdl/localhost_8080/ProyectoSOAP/ServicioLineaArea.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/ServicioLineaArea"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/ServicioLineaArea">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-ServicioLineaArea" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/serviciolineaareaws"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/ServicioLineaArea"/>
-    </target>
     <target name="wsimport-client-InicioSesion" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/InicioSesion"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/InicioSesion" destdir="${build.generated.dir}/jax-wsCache/InicioSesion" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/InicioSesion/wsdl/localhost_8080/ProyectoSOAP/InicioSesion.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProyectoSOAP/InicioSesion?WSDL" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/InicioSesion/wsdl/localhost_8080/ProyectoSOAP/InicioSesion.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/InicioSesion" destdir="${build.generated.dir}/jax-wsCache/InicioSesion" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/InicioSesion/wsdl/localhost_8080/ProyectoSOAP-master/InicioSesion.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProyectoSOAP-master/InicioSesion?WSDL" xnocompile="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/InicioSesion/wsdl/localhost_8080/ProyectoSOAP-master/InicioSesion.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/InicioSesion"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
@@ -93,8 +61,8 @@
     </target>
     <target name="wsimport-client-ServicioTarjetaCredito" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioTarjetaCredito"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioTarjetaCredito" destdir="${build.generated.dir}/jax-wsCache/ServicioTarjetaCredito" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioTarjetaCredito/wsdl/localhost_8080/ProyectoSOAP/ServicioTarjetaCredito.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProyectoSOAP/ServicioTarjetaCredito?WSDL" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioTarjetaCredito/wsdl/localhost_8080/ProyectoSOAP/ServicioTarjetaCredito.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioTarjetaCredito" destdir="${build.generated.dir}/jax-wsCache/ServicioTarjetaCredito" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioTarjetaCredito/wsdl/localhost_8080/ProyectoSOAP-master/ServicioTarjetaCredito.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProyectoSOAP-master/ServicioTarjetaCredito?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioTarjetaCredito/wsdl/localhost_8080/ProyectoSOAP-master/ServicioTarjetaCredito.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/ServicioTarjetaCredito"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
@@ -107,5 +75,37 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/serviciotarjetaws"/>
         <delete dir="${build.generated.dir}/jax-wsCache/ServicioTarjetaCredito"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ServicioHotel, wsimport-client-ServicioLineaArea, wsimport-client-InicioSesion, wsimport-client-ServicioTarjetaCredito"/>
+    <target name="wsimport-client-ServicioHotel" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioHotel"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioHotel" destdir="${build.generated.dir}/jax-wsCache/ServicioHotel" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioHotel/wsdl/localhost_8080/ProyectoSOAP-master/ServicioHotel.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProyectoSOAP-master/ServicioHotel?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioHotel/wsdl/localhost_8080/ProyectoSOAP-master/ServicioHotel.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServicioHotel"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServicioHotel">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServicioHotel" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciohotelws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ServicioHotel"/>
+    </target>
+    <target name="wsimport-client-ServicioLineaArea" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioLineaArea"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioLineaArea" destdir="${build.generated.dir}/jax-wsCache/ServicioLineaArea" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioLineaArea/wsdl/localhost_8080/ProyectoSOAP-master/ServicioLineaArea.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ProyectoSOAP-master/ServicioLineaArea?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ServicioLineaArea/wsdl/localhost_8080/ProyectoSOAP-master/ServicioLineaArea.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServicioLineaArea"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServicioLineaArea">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServicioLineaArea" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/serviciolineaareaws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ServicioLineaArea"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-InicioSesion, wsimport-client-ServicioTarjetaCredito, wsimport-client-ServicioHotel, wsimport-client-ServicioLineaArea"/>
 </project>

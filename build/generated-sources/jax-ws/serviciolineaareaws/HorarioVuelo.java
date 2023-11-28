@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para horarioVuelo complex type.
+ * <p>Java class for horarioVuelo complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="horarioVuelo"&gt;
@@ -43,7 +43,7 @@ public class HorarioVuelo {
     protected String idHorario;
 
     /**
-     * Obtiene el valor de la propiedad fecha.
+     * Gets the value of the fecha property.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class HorarioVuelo {
     }
 
     /**
-     * Define el valor de la propiedad fecha.
+     * Sets the value of the fecha property.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class HorarioVuelo {
     }
 
     /**
-     * Obtiene el valor de la propiedad horaLlegada.
+     * Gets the value of the horaLlegada property.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class HorarioVuelo {
     }
 
     /**
-     * Define el valor de la propiedad horaLlegada.
+     * Sets the value of the horaLlegada property.
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class HorarioVuelo {
     }
 
     /**
-     * Obtiene el valor de la propiedad horaSalida.
+     * Gets the value of the horaSalida property.
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class HorarioVuelo {
     }
 
     /**
-     * Define el valor de la propiedad horaSalida.
+     * Sets the value of the horaSalida property.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class HorarioVuelo {
     }
 
     /**
-     * Obtiene el valor de la propiedad idHorario.
+     * Gets the value of the idHorario property.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class HorarioVuelo {
     }
 
     /**
-     * Define el valor de la propiedad idHorario.
+     * Sets the value of the idHorario property.
      * 
      * @param value
      *     allowed object is

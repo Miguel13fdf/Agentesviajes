@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para validarFechaVencimientoResponse complex type.
+ * <p>Java class for validarFechaVencimientoResponse complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="validarFechaVencimientoResponse"&gt;
@@ -36,7 +36,7 @@ public class ValidarFechaVencimientoResponse {
     protected boolean _return;
 
     /**
-     * Obtiene el valor de la propiedad return.
+     * Gets the value of the return property.
      * 
      */
     public boolean isReturn() {
@@ -44,7 +44,7 @@ public class ValidarFechaVencimientoResponse {
     }
 
     /**
-     * Define el valor de la propiedad return.
+     * Sets the value of the return property.
      * 
      */
     public void setReturn(boolean value) {

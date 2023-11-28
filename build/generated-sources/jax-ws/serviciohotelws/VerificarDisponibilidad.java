@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para verificarDisponibilidad complex type.
+ * <p>Java class for verificarDisponibilidad complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="verificarDisponibilidad"&gt;
@@ -37,7 +37,7 @@ public class VerificarDisponibilidad {
     protected String fechaFin;
 
     /**
-     * Obtiene el valor de la propiedad fechaInicio.
+     * Gets the value of the fechaInicio property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class VerificarDisponibilidad {
     }
 
     /**
-     * Define el valor de la propiedad fechaInicio.
+     * Sets the value of the fechaInicio property.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class VerificarDisponibilidad {
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaFin.
+     * Gets the value of the fechaFin property.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class VerificarDisponibilidad {
     }
 
     /**
-     * Define el valor de la propiedad fechaFin.
+     * Sets the value of the fechaFin property.
      * 
      * @param value
      *     allowed object is

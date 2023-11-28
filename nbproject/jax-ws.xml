@@ -6,73 +6,9 @@
     </service>
   </services>
   <clients>
-    <client name="ServicioHotel">
-      <wsdl-url>http://localhost:8080/ProyectoSOAP/ServicioHotel?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/ProyectoSOAP/ServicioHotel.wsdl</local-wsdl-file>
-      <package-name>serviciohotelws</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/ProyectoSOAP/ServicioHotel?WSDL</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
-    <client name="ServicioLineaArea">
-      <wsdl-url>http://localhost:8080/ProyectoSOAP/ServicioLineaArea?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/ProyectoSOAP/ServicioLineaArea.wsdl</local-wsdl-file>
-      <package-name>serviciolineaareaws</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/ProyectoSOAP/ServicioLineaArea?WSDL</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
     <client name="InicioSesion">
-      <wsdl-url>http://localhost:8080/ProyectoSOAP/InicioSesion?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/ProyectoSOAP/InicioSesion.wsdl</local-wsdl-file>
+      <wsdl-url>http://localhost:8080/ProyectoSOAP-master/InicioSesion?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/ProyectoSOAP-master/InicioSesion.wsdl</local-wsdl-file>
       <package-name>servicioiniciosesion</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -90,21 +26,17 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/ProyectoSOAP/InicioSesion?WSDL</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/ProyectoSOAP-master/InicioSesion?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
         </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
       </wsimport-options>
     </client>
     <client name="ServicioTarjetaCredito">
-      <wsdl-url>http://localhost:8080/ProyectoSOAP/ServicioTarjetaCredito?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/ProyectoSOAP/ServicioTarjetaCredito.wsdl</local-wsdl-file>
+      <wsdl-url>http://localhost:8080/ProyectoSOAP-master/ServicioTarjetaCredito?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/ProyectoSOAP-master/ServicioTarjetaCredito.wsdl</local-wsdl-file>
       <package-name>serviciotarjetaws</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -122,7 +54,71 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/ProyectoSOAP/ServicioTarjetaCredito?WSDL</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/ProyectoSOAP-master/ServicioTarjetaCredito?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="ServicioHotel">
+      <wsdl-url>http://localhost:8080/ProyectoSOAP-master/ServicioHotel?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/ProyectoSOAP-master/ServicioHotel.wsdl</local-wsdl-file>
+      <package-name>serviciohotelws</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/ProyectoSOAP-master/ServicioHotel?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="ServicioLineaArea">
+      <wsdl-url>http://localhost:8080/ProyectoSOAP-master/ServicioLineaArea?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/ProyectoSOAP-master/ServicioLineaArea.wsdl</local-wsdl-file>
+      <package-name>serviciolineaareaws</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/ProyectoSOAP-master/ServicioLineaArea?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
