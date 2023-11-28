@@ -43,6 +43,7 @@ public class Peticiones implements IValidator {
             @WebParam(name = "numeroHabitaciones") Integer numeroHabitaciones) {
 
         // VALIDACIONES
+
         if (!validateName(nombreCliente)) {
             return "Nombre de cliente no válido.";
         }
@@ -143,8 +144,11 @@ public class Peticiones implements IValidator {
                     || fechaFin == null || fechaFin.trim().isEmpty()) {
                 return "Las fechas de inicio y fin son obligatorias.";
             }
-            String resultado = cliente.verificarDisponibilidad(fechaInicio, fechaFin);
+            if (!validateDate(fechaInicio) || !validateDate(fechaFin)) {
+                return "Fechas no válidas para verificar disponibilidad.";
+            }
 
+            String resultado = cliente.verificarDisponibilidad(fechaInicio, fechaFin);
             return resultado;
 
         } catch (Exception e) {
@@ -237,7 +241,6 @@ public class Peticiones implements IValidator {
     @WebMethod(operationName = "login")
     public String login(@WebParam(name = "username") String username, @WebParam(name = "password") String password) {
         return cliente3.login(username, password);
-
     }
 
     @WebMethod(operationName = "Registro")
@@ -296,12 +299,23 @@ public class Peticiones implements IValidator {
             @WebParam(name = "codigoSeguridad") String codigoSeguridad,
             @WebParam(name = "saldoDisponible") float saldoDisponible) {
 
+        if (!validateCardNumber(numero)) {
+            return "Número de tarjeta no válido.";
+        }
+
+        if (!validateName(titular) || !validateDate(fechaVencimiento)) {
+            return "Datos obligatorios no válidos.";
+        }
+
+        if (!validateCost((double) saldoDisponible)) {
+            return "Saldo no válido.";
+        }
         return cliente4.actualizarTarjeta(numero, titular, fechaVencimiento, codigoSeguridad, saldoDisponible);
     }
 
     @WebMethod(operationName = "validarFechaVencimiento")
     public boolean validarFechaVencimiento(String numeroTarjeta, String fechaVencimiento) {
-        return cliente4.validarFechaVencimiento(numeroTarjeta, numeroTarjeta);
+        return cliente4.validarFechaVencimiento(numeroTarjeta, fechaVencimiento);
     }
 
     @WebMethod(operationName = "consultarSaldoDisponible")
