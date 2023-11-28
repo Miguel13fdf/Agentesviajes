@@ -36,7 +36,7 @@ import validator.IValidator;
  */
 @WebService(serviceName = "Peticiones")
 public class Peticiones implements IValidator {
-
+    
     ServicioHotel_Service servicio = new ServicioHotel_Service();
     ServicioHotel cliente = servicio.getServicioHotelPort();
     private static final Logger LOGGER = Logger.getLogger(Peticiones.class.getName());//permite registrar mensajes en diferentes niveles
@@ -256,16 +256,21 @@ public class Peticiones implements IValidator {
 
     @WebMethod(operationName = "login")
     public String login(@WebParam(name = "username") String username, @WebParam(name = "password") String password) {
+            AES_ENCRYPTION encriptacion = new AES_ENCRYPTION();
+
         if (username == null || username.trim().isEmpty() || password == null || password.trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Nombre de usuario y contraseña son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
             return "";
         }
-
-        return cliente3.login(username, password);
+        String desencriptado = encriptacion.encrypt(password);
+        System.out.println(password);
+        System.out.println(desencriptado + "HOLAAAAAAAAAAAAAAAA");
+        return cliente3.login(username, desencriptado);
     }
 
     @WebMethod(operationName = "Registro")
     public String Registro(@WebParam(name = "nombre") String nombre, @WebParam(name = "apellido") String apellido, @WebParam(name = "cedula") String cedula, @WebParam(name = "usuaio") String usuaio, @WebParam(name = "contrasena") String contrasena, @WebParam(name = "contrasena1") String contrasena1, @WebParam(name = "pregunta") String pregunta, @WebParam(name = "respuesta") String respuesta) {
+            AES_ENCRYPTION encriptacion = new AES_ENCRYPTION();
 
         if (!validateName(nombre)) {
             return "Nombre no válido.";
@@ -278,8 +283,9 @@ public class Peticiones implements IValidator {
         if (!validateIdentificationCard(cedula)) {
             return "Cédula no válida.";
         }
+        String encriptado = encriptacion.encrypt(contrasena);
 
-        return cliente3.registro(nombre, apellido, cedula, usuaio, contrasena, contrasena1, pregunta, respuesta);
+        return cliente3.registro(nombre, apellido, cedula, usuaio, encriptado, encriptado, pregunta, respuesta);
     }
 
     ServicioTarjetaCredito_Service servicioitarjetacredito = new ServicioTarjetaCredito_Service();

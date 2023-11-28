@@ -1,5 +1,6 @@
 package intermediario;
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.Arrays;
 import java.util.Base64;
@@ -16,6 +17,8 @@ import javax.swing.JOptionPane;
  */
 public class AES_ENCRYPTION {
 
+    public AES_ENCRYPTION() {
+    }
     private String LLAVE = "ISTAAESEncrypt";
 
     // Clave de encriptación / desencriptación
@@ -30,9 +33,6 @@ public class AES_ENCRYPTION {
         } catch (Exception e) {
             return null;
         }
-    }
-
-    public AES_ENCRYPTION() {
     }
 
     // Encriptar
@@ -60,24 +60,10 @@ public class AES_ENCRYPTION {
 
             byte[] cadena = Base64.getDecoder().decode(desencriptar);  // Cambio aquí
             byte[] desencriptacioon = cipher.doFinal(cadena);
-            String cadena_desencriptada = new String(desencriptacioon);
+            String cadena_desencriptada = new String(desencriptacioon, StandardCharsets.UTF_8);
             return cadena_desencriptada;
         } catch (Exception e) {
             return "";
         }
-    }
-
-    public static void main(String[] args) {
-        String encriptada = "";
-        String aEnccriptar = "";
-
-        AES_ENCRYPTION main = new AES_ENCRYPTION();
-
-        aEnccriptar = JOptionPane.showInputDialog("Ingresa la cadena a encriptar: ");
-
-        encriptada = main.encrypt(aEnccriptar);
-
-        JOptionPane.showMessageDialog(null, encriptada);
-        JOptionPane.showMessageDialog(null, main.decrypt(encriptada));
     }
 }
