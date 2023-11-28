@@ -10,6 +10,7 @@ import java.util.logging.SimpleFormatter;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import javax.swing.JOptionPane;
 import serviciohotelws.ServicioHotel;
 import serviciohotelws.ServicioHotel_Service;
 
@@ -43,21 +44,22 @@ public class Peticiones implements IValidator {
             @WebParam(name = "numeroHabitaciones") Integer numeroHabitaciones) {
 
         // VALIDACIONES
-
         if (!validateName(nombreCliente)) {
-            return "Nombre de cliente no válido.";
+            JOptionPane.showMessageDialog(null, "Nombre de cliente no válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         if (!validateDate(fechaInicio) || !validateDate(fechaFin)) {
-            return "Fechas de inicio o fin no válidas.";
+            JOptionPane.showMessageDialog(null, "Fechas de inicio o fin no válidas.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         if (!validateNumberOfRooms(numeroHabitaciones)) {
-            return "Número de habitaciones no válido.";
+            JOptionPane.showMessageDialog(null, "Número de habitaciones no válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         try {
-
             String resultado = cliente.reservarHotel(nombreCliente, fechaInicio, fechaFin, numeroHabitaciones);
 
             registrarActividad("Se realizó una reserva para " + nombreCliente + " desde " + fechaInicio + " hasta " + fechaFin + ".");
@@ -67,7 +69,6 @@ public class Peticiones implements IValidator {
                 enviarNotificacionCliente(nombreCliente, "¡Reserva exitosa! Detalles: " + resultado);
                 aplicarDescuentoCliente(nombreCliente, numeroHabitaciones);
             }
-
             return resultado;
         } catch (Exception e) {
             return "Error al realizar la reserva: " + e.getMessage();
@@ -90,6 +91,12 @@ public class Peticiones implements IValidator {
     }
 
     private void registrarActividad(String mensaje) {
+        if (mensaje == null || mensaje.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Intento fallido al registrar una actividad (El mensaje esta vacio).", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Registra el mensaje si pasa la validación
         LOGGER.info(mensaje);
     }
 
@@ -142,10 +149,13 @@ public class Peticiones implements IValidator {
         try {
             if (fechaInicio == null || fechaInicio.trim().isEmpty()
                     || fechaFin == null || fechaFin.trim().isEmpty()) {
-                return "Las fechas de inicio y fin son obligatorias.";
+
+                JOptionPane.showMessageDialog(null, "Las fechas de inicio y fin son obligatorias.", "Error", JOptionPane.WARNING_MESSAGE);
+                return "";
             }
             if (!validateDate(fechaInicio) || !validateDate(fechaFin)) {
-                return "Fechas no válidas para verificar disponibilidad.";
+                JOptionPane.showMessageDialog(null, "Fechas no válidas para verificar disponibilidad.", "Error", JOptionPane.WARNING_MESSAGE);
+                return "";
             }
 
             String resultado = cliente.verificarDisponibilidad(fechaInicio, fechaFin);
@@ -159,13 +169,15 @@ public class Peticiones implements IValidator {
     @WebMethod
     public String cancelarReserva(@WebParam(name = "codigoreserva") String codigoreserva) {
         if (codigoreserva == null || codigoreserva.trim().isEmpty()) {
-            return "El codigo de reserva es obligatorio.";
+            JOptionPane.showMessageDialog(null, "El codigo de reserva es obligatorio.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         try {
             return cliente.cancelarReserva(codigoreserva);
         } catch (Exception e) {
-            return "Error al cancelar la reserva: " + e.getMessage();
+            JOptionPane.showMessageDialog(null, "Error al cancelar la reserva: " + e.getMessage(), "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
     }
@@ -173,7 +185,6 @@ public class Peticiones implements IValidator {
 
     @WebMethod
     public String listarReservas() {
-
         return cliente.listarReservas();
     }
 
@@ -240,6 +251,11 @@ public class Peticiones implements IValidator {
 
     @WebMethod(operationName = "login")
     public String login(@WebParam(name = "username") String username, @WebParam(name = "password") String password) {
+        if (username == null || username.trim().isEmpty() || password == null || password.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Nombre de usuario y contraseña son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
+        }
+
         return cliente3.login(username, password);
     }
 
@@ -248,16 +264,20 @@ public class Peticiones implements IValidator {
 
         // VALIDACIONES
         if (!validateName(nombre)) {
-            return "Nombre no válido.";
+            JOptionPane.showMessageDialog(null, "Nombre no válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         if (!validateName(apellido)) {
-            return "Apellido no válido.";
+            JOptionPane.showMessageDialog(null, "Apellido no válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         if (!validateIdentificationCard(cedula)) {
-            return "Cédula no válida.";
+            JOptionPane.showMessageDialog(null, "Cédula no válida.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
+
         return cliente3.registro(nombre, apellido, cedula, usuaio, contrasena, contrasena1);
     }
 
@@ -274,19 +294,23 @@ public class Peticiones implements IValidator {
 
         // VALIDACIONES
         if (!validateCardNumber(numero)) {
-            return "Número de tarjeta no válido.";
+            JOptionPane.showMessageDialog(null, "Número de tarjeta no válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         if (!validateName(titular)) {
-            return "Titular no válido.";
+            JOptionPane.showMessageDialog(null, "Titular no válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         if (!validateDate(fechaVencimiento)) {
-            return "Fecha de vencimiento no válida.";
+            JOptionPane.showMessageDialog(null, "Fecha de vencimiento no válida.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         if (!validateCost((double) saldoDisponible)) {
-            return "Saldo no válido.";
+            JOptionPane.showMessageDialog(null, "Saldo no válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         return cliente4.registroTarjeta(numero, titular, fechaVencimiento, codigoSeguridad, saldoDisponible, cliente);
@@ -300,15 +324,18 @@ public class Peticiones implements IValidator {
             @WebParam(name = "saldoDisponible") float saldoDisponible) {
 
         if (!validateCardNumber(numero)) {
-            return "Número de tarjeta no válido.";
+            JOptionPane.showMessageDialog(null, "Número de tarjeta no válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         if (!validateName(titular) || !validateDate(fechaVencimiento)) {
-            return "Datos obligatorios no válidos.";
+            JOptionPane.showMessageDialog(null, "Datos obligatorios no válidos.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
 
         if (!validateCost((double) saldoDisponible)) {
-            return "Saldo no válido.";
+            JOptionPane.showMessageDialog(null, "Saldo no válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return "";
         }
         return cliente4.actualizarTarjeta(numero, titular, fechaVencimiento, codigoSeguridad, saldoDisponible);
     }
@@ -348,5 +375,4 @@ public class Peticiones implements IValidator {
 
         return cliente4.retirarDinero(numeroTarjeta, cedulaCliente, monto);
     }
-
 }

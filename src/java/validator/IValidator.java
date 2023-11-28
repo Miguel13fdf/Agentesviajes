@@ -154,8 +154,12 @@ public interface IValidator {
             return false;
         }
     }
-    
+
     public default boolean validateNumberOfRooms(int numberOfRooms) {
         return numberOfRooms > 0;
+    }
+
+    public default boolean ValidatePassword(String pw1, String pw2) {
+        return (pw1 == null ? pw2 == null : pw1.equals(pw2));
     }
 }
